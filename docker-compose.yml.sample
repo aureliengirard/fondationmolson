@@ -1,0 +1,28 @@
+version: "2"
+
+volumes:
+    data: {}
+
+services:
+    db:
+        image: mariadb
+        environment:
+            MYSQL_ROOT_PASSWORD: root
+        volumes:
+            - data:/var/lib/mysql
+    wordpress:
+        image: wordpress:4.9.1-php5.6
+        volumes:
+            - ./:/var/www/html
+        ports:
+            - "8080:80"
+        links:
+            - db:mysql
+        environment:
+            WORDPRESS_DB_PASSWORD: root
+    phpmyadmin:
+        image: phpmyadmin/phpmyadmin
+        ports:
+            - 8081:80
+        links:
+            - db:db

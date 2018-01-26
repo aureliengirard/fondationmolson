@@ -1,0 +1,85 @@
+#
+# Adapted from here: http://www.billerickson.net/git-push-wpengine/
+#
+
+# Ignore everything #
+**
+
+# Keep basic folders EMPTY
+!wp-content/
+wp-content/**
+!wp-content/themes/
+!wp-content/plugins/
+wp-content/themes/**
+wp-content/plugins/**
+
+# Add two rules for each Theme or Plugin you want to include:
+# 1. !folder-name/    <-- includes the Plugin and top level files
+# 2. !folder-name/**  <-- includes the Plugin and sub level files recursively, except for the "Ignore some other system generated files" rules below
+###############################
+
+# Start editing!
+
+# Theme
+!wp-content/themes/assocdcoffee-theme/
+!wp-content/themes/assocdcoffee-theme/**
+
+# Timber
+!wp-content/plugins/timber-library/
+!wp-content/plugins/timber-library/**
+
+# All-in-one WP Migration
+!wp-content/plugins/all-in-one-wp-migration/
+!wp-content/plugins/all-in-one-wp-migration/**
+
+# ACF
+!wp-content/plugins/advanced-custom-fields-pro/
+!wp-content/plugins/advanced-custom-fields-pro/**
+!wp-content/plugins/acf-gravityforms-add-on/
+!wp-content/plugins/acf-gravityforms-add-on/**
+
+# WPML
+!wp-content/plugins/gravityforms-multilingual/
+!wp-content/plugins/gravityforms-multilingual/**
+!wp-content/plugins/sitepress-multilingual-cms/
+!wp-content/plugins/sitepress-multilingual-cms/**
+!wp-content/plugins/wpml-string-translation/
+!wp-content/plugins/wpml-string-translation/**
+!wp-content/plugins/wpml-translation-management/
+!wp-content/plugins/wpml-translation-management/**
+
+# Gravity Forms
+!wp-content/plugins/gravityforms/
+!wp-content/plugins/gravityforms/**
+
+# WP Rocket
+!wp-content/plugins/wp-rocket/
+!wp-content/plugins/wp-rocket/**
+
+# Custom Plugin
+
+# Other dependencies
+!package.json
+!.eslintrc
+
+# Stop editing!
+
+############################################
+# Ignore some other system generated files #
+############################################
+.DS_Store
+._*
+.Trashes
+Thumbs.db
+
+# Keep document files #
+###################################
+!README.md
+!CHANGELOG.md
+
+# Keep .gitignore #
+###################################
+!.gitignore
+
+# Docker Sample Config
+!docker-compose.yml.sample
