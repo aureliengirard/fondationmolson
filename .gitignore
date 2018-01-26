@@ -21,8 +21,8 @@ wp-content/plugins/**
 # Start editing!
 
 # Theme
-!wp-content/themes/assocdcoffee-theme/
-!wp-content/themes/assocdcoffee-theme/**
+!wp-content/themes/fondationmolson/
+!wp-content/themes/fondationmolson/**
 
 # Timber
 !wp-content/plugins/timber-library/
