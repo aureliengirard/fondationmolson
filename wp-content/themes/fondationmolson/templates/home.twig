@@ -1,0 +1,68 @@
+{% extends "base.twig" %}
+
+{% block header %}
+{% include 'partial/_jumbotron.twig' with { page: page } %}
+{% endblock %}
+
+{% block content %}
+<div id="" class="container">
+    <!-- About Section -->
+    <div class="row">
+        <div class="col-12">
+            <h2>{{ page.about_section_title }}</h2>
+            <div class="">{{ page.about_section_text }}</div>
+            <p><a href="{{ page.about_section_cta_link }}" class="btn btn-primary">{{ page.about_section_cta_title }}</a></p>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <div class="row">
+        <div class="col-12">
+            <h2>{{ page.fields_of_intervention_section_title }}</h2>
+        </div>
+    </div>
+    <div class="row">
+        {% for item in page.get_field('fields_of_intervention') %}
+        <div class="col-sm-1 col-lg-4">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="{{ TimberImage(item.image).src }}" alt="{{ item.title }}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ item.title }}</h5>
+                    <p class="card-text">{{ item.text }}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <p><a href="{{ page.fields_of_intervention_section_cta_link }}" class="btn btn-primary">{{ page.fields_of_intervention_section_cta_title }}</a></p>
+        </div>
+    </div>
+
+    <!-- News Section -->
+    <div class="row">
+        <div class="col-12">
+            <h2>{{ page.news_section_title }}</h2>
+        </div>
+    </div>
+    <div class="row">
+        {% for post in posts %}
+        <div class="col-sm-1 col-lg-4">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="{{ post.thumbnail.src }}" alt="{{ post.title }}">
+                <div class="card-body">
+                    <a href="{{ post.link }}"><h5 class="card-title">{{ post.title }}</h5></a>
+                    <p class="card-text">{{ post.preview.read_more('') }}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <p><a href="{{ page.news_section_cta_link }}" class="btn btn-primary">{{ page.news_section_title }}</a></p>
+        </div>
+    </div>
+</div>
+{% endblock %}

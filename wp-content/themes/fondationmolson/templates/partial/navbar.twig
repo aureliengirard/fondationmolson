@@ -1,0 +1,20 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container mt-8">
+      <a class="navbar-brand" href="#">
+        <img src="{{ theme.link }}/static/img/logo.png" width="30" height="30" alt="">
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto h-100">
+          {% for item in menu.get_items %}
+              <li class="nav-item">
+                  <a class="nav-link mx-1 px-3 hover-green d-md-flex {% if item.current %}active{% endif %}" href="{{ item.link }}"><span class="my-auto color-brown">{{ item.title }}</span></a>
+              </li>
+          {% endfor %}
+          </ul>
+      </div>
+    </div>
+</nav>
