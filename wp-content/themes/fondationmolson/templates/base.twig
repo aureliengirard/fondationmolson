@@ -1,13 +1,6 @@
 <!doctype html>
 <html class="" {{ site.language_attributes }}>
 	<head>
-	<!-- Google Tag Manager -->
-	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-	})(window,document,'script','dataLayer','[GTM_ID]');</script>
-	<!-- End Google Tag Manager -->
 	{% block html_head_container %}
 		{% include 'html-header.twig' %}
 		{% block head %}
@@ -16,11 +9,7 @@
 	</head>
 
 	<body class="{{body_class}} static-bg" data-template="base.twig">
-		<!-- Google Tag Manager (noscript) -->
-		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=[GTM_ID]"
-		height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-		<!-- End Google Tag Manager (noscript) -->
-		<div id="nav" class="fixed-top">
+		<div id="nav" class="">
 				<div class="container px-0">
 					{% block navbar %}
 					{% include 'partial/navbar.twig' %}
