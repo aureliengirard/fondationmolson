@@ -10,8 +10,8 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ml-auto h-100">
           {% for item in menu.get_items %}
-              <li class="nav-item">
-                  <a class="nav-link mx-1 px-3 hover-green d-md-flex {% if item.current %}active{% endif %}" href="{{ item.link }}"><span class="my-auto color-brown">{{ item.title }}</span></a>
+              <li class="nav-item {% if item.current %}active{% endif %}">
+                  <a class="nav-link mx-1 px-3 hover-green d-md-flex" href="{{ item.link }}"><span class="my-auto color-brown">{{ item.title }}</span></a>
               </li>
           {% endfor %}
           </ul>
