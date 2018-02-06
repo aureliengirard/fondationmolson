@@ -1,0 +1,27 @@
+{% extends "base.twig" %}
+
+{% block header %}
+{% endblock %}
+
+{% block content %}
+<div id="" class="container">
+    <div class="row">
+        <div class="col-12">
+            <h2>{{ post.title }}</h2>
+            <div class="">{{ post.date }}</div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <img src="{{ post.thumbnail.src("full") }}" class="img-fluid" alt="{{ post.title }}">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <div class="">{{ post.content }}</div>
+        </div>
+    </div>
+</div>
+{% endblock %}

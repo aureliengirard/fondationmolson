@@ -25,7 +25,7 @@
         {% for item in page.get_field('fields_of_intervention') %}
         <div class="col-sm-1 col-lg-4">
             <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="{{ TimberImage(item.image).src }}" alt="{{ item.title }}">
+                <img class="card-img-top" src="{{ TimberImage(item.image).src("medium") }}" alt="{{ item.title }}">
                 <div class="card-body">
                     <h5 class="card-title">{{ item.title }}</h5>
                     <p class="card-text">{{ item.text }}</p>
@@ -50,7 +50,7 @@
         {% for post in posts %}
         <div class="col-sm-1 col-lg-4">
             <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="{{ post.thumbnail.src }}" alt="{{ post.title }}">
+                <img class="card-img-top" src="{{ post.thumbnail.src("medium") }}" alt="{{ post.title }}">
                 <div class="card-body">
                     <a href="{{ post.link }}"><h5 class="card-title">{{ post.title }}</h5></a>
                     <p class="card-text">{{ post.preview.read_more('') }}</p>
