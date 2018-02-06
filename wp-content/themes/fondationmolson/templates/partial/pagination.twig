@@ -1,60 +1,38 @@
 {% if posts.pagination.pages is not empty %}
-    <div class="pagination-block">
-        <ul class="pagination">
-            {% if pagination.pages|first and pagination.pages|first.current != true %}
-                <li class="first btn">
-                    <a href="{{ pagination.pages|first.link }}">First</a>
-                </li>
-            {% else %}
-                <li class="first btn disabled">
-                    <a>First</a>
-                </li>
-            {% endif %}
 
-            {% if pagination.prev %}
-                <li class="prev btn">
-                    <a href="{{ pagination.prev.link }}">Previous</a>
-                </li>
-            {% else %}
-                <li class="prev btn disabled">
-                    <a>Previous</a>
-                </li>
-            {% endif %}
+<nav class="m-auto" aria-label="">
+    <ul class="pagination">
+        <li class="page-item {% if pagination.pages|first.current %}disabled{% endif %}">
+            <a class="page-link" href="{{ pagination.pages|first.link }}" aria-label="{{ __('First', 'pagination') }}">
+                <span aria-hidden="true">&laquo;</span>
+                <span class="sr-only">{{ __('First', 'pagination') }}</span>
+            </a>
+        </li>
+        <li class="page-item {% if pagination.pages|first.current %}disabled{% endif %}">
+            <a class="page-link" href="{{ pagination.prev.link }}" aria-label="{{ __('Previous', 'pagination') }}">
+                <span aria-hidden="true">&lt;</span>
+                <span class="sr-only">{{ __('Previous', 'pagination') }}</span>
+            </a>
+        </li>
 
-            {% for page in pagination.pages %}
-                {% if page.link %}
-                    <li>
-                        <a href="{{ page.link }}" class="{{ page.class }}">{{ page.title }}</a>
-                    </li>
-                {% else %}
-                    <li class="current">
-                        <a class="{{ page.class }}">{{ page.title }}</a>
-                    </li>
-                {% endif %}
-            {% endfor %}
+        {% for page in pagination.pages %}
+        <li class="page-item {% if page.current %}disabled active{% endif %}">
+            <a class="page-link" href="{{ page.link }}">{{ page.title }}</a>
+        </li>
+        {% endfor %}
 
-            {% if pagination.next %}
-                <li class="next btn">
-                    <a href="{{ pagination.next.link }}">
-                        Next
-                    </a>
-                </li>
-            {% else %}
-                <li class="next btn disabled">
-                    <a>
-                        Next
-                    </a>
-                </li>
-            {% endif %}
-            {% if pagination.pages|last and pagination.pages|last.current != true %}
-                <li class="last btn">
-                    <a href="{{ pagination.pages|last.link }}">Last</a>
-                </li>
-            {% else %}
-                <li class="last btn disabled">
-                    <a>Last</a>
-                </li>
-            {% endif %}
-        </ul>
-    </div>
+        <li class="page-item {% if pagination.pages|last.current %}disabled{% endif %}">
+            <a class="page-link" href="{{ pagination.next.link }}" aria-label="{{ __('Next', 'pagination') }}">
+                <span aria-hidden="true">&gt;</span>
+                <span class="sr-only">{{ __('Next', 'pagination') }}</span>
+            </a>
+        </li>
+        <li class="page-item {% if pagination.pages|last.current %}disabled{% endif %}">
+            <a class="page-link" href="{{ pagination.pages|last.link }}" aria-label="{{ __('Last', 'pagination') }}">
+                <span aria-hidden="true">&raquo;</span>
+                <span class="sr-only">{{ __('Last', 'pagination') }}</span>
+            </a>
+        </li>
+    </ul>
+</nav>
 {% endif %}

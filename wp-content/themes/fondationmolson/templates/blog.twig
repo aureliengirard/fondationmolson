@@ -1,0 +1,26 @@
+{% extends "base.twig" %}
+
+{% block header %}
+{% include 'partial/_jumbotron.twig' with { page: page } %}
+{% endblock %}
+
+{% block content %}
+<div id="" class="container">
+    {% for post in posts %}
+    <div class="row">
+        <div class="col-4">
+            <img src="{{ post.thumbnail.src }}" alt="{{ post.title }}">
+        </div>
+        <div class="col-8">
+            <h5>{{ post.title }}</h5>
+            <h6>{{ post.date }}</h6>
+            <div class="">{{ post.preview }}</div>
+        </div>
+    </div>
+    {% endfor %}
+
+    <div class="row">
+        {% include 'partial/pagination.twig' with { pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %}
+    </div>
+</div>
+{% endblock %}

@@ -145,6 +145,13 @@
             {
                 "param": "page_template",
                 "operator": "==",
+                "value": "blog.php"
+            }
+        ],
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
                 "value": "fields_of_intervention.php"
             }
         ]
@@ -157,5 +164,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1517927945
+    "modified": 1517932822
 }
