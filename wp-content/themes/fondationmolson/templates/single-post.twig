@@ -23,5 +23,33 @@
             <div class="">{{ post.content }}</div>
         </div>
     </div>
+
+    {% set gallery = post.get_field("gallery") %}
+    {% if gallery %}
+    <div class="row">
+        <div class="col-12">
+            <ul>
+                {% for item in gallery %}
+                {% set image = TimberImage(item) %}
+                <li><img src="{{ image.src("medium") }}" alt="{{ image.title }}"></li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    {% endif %}
+
+    {% set related_news = post.get_field("related_news") %}
+    {% if related_news %}
+    <div class="row">
+        <div class="col-12">
+            <h3>{{ __('Related Articles', 'news') }}</h3>
+        </div>
+    </div>
+    {% for item in related_news %}
+    <article class="row">
+        {% include 'partial/_post_tease.twig' with { post: item.post } %}
+    </article>
+    {% endfor %}
+    {% endif %}
 </div>
 {% endblock %}

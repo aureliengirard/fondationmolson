@@ -7,16 +7,9 @@
 {% block content %}
 <div id="" class="container">
     {% for post in posts %}
-    <div class="row">
-        <div class="col-4">
-            <a href="{{ post.link }}"><img src="{{ post.thumbnail.src("medium") }}" alt="{{ post.title }}"></a>
-        </div>
-        <div class="col-8">
-            <h5><a href="{{ post.link }}">{{ post.title }}</a></h5>
-            <h6>{{ post.date }}</h6>
-            <div class="">{{ post.preview.read_more('') }}</div>
-        </div>
-    </div>
+    <article class="row">
+        {% include 'partial/_post_tease.twig' with { post: post } %}
+    </article>
     {% endfor %}
 
     <div class="row">
