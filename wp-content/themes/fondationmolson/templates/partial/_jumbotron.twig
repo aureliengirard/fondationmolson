@@ -1,13 +1,49 @@
-<div class="jumbotron jumbotron-fluid d-flex align-items-center p-0" style="background:url({{TimberImage(page.get_field('intro_background_image'))}}) no-repeat center center;background-size:cover;min-height:300px;">
-	<div class="container">
-		<h1 class="display-4">{{ page.get_field('intro_title') }}</h1>
-		<p class="lead">{{ page.get_field('intro_text') }}</p>
-		<p class="lead">
-			{% if page.get_field('ctas') %}
-				{% for item in page.get_field('ctas') %}
-				<a class="btn btn-primary" href="{{ item.link }}">{{ item.title }}</a>
-				{% endfor %}
-			{% endif %}
-		</p>
-	</div>
-</div>
+{% if page.path == '/fondationmolson.com/en/' or page.path == '/fondationmolson.com/fr/' %}
+    <section class="no-padding margin-70px-top xs-margin-35px-top xs-background-image-center section-hero" style="background-image:url({{TimberImage(page.get_field('intro_background_image'))}}); background-size: cover !important; background-position: center !important; background-repeat: no-repeat !important">
+        <div class="container-fluid height-700px position-relative">
+            <div class="slider-typography">
+                <div class="row height-100">
+                    <div class="height-100 col-sm-6 col-sm-offset-6 text-left bg-primary-opacity padding-seven-all sm-text-center">
+                        <div class="slider-text-middle-main">
+                            <div class="slider-text-middle">
+                                <h2 class="intro-title">{{ page.get_field('intro_title') }}</h2>
+                                <div class="separator-line-horrizontal-full width-40 margin-35px-tb sm-width-100 sm-margin-40px-top sm-margin-35px-top bg-white display-inline-block sm-display-block"></div>
+                                <span class="communities-text sm-display-block sm-margin-25px-bottom">{{ page.get_field('communities') }}</span>
+                                <p class="intro-text margin-40px-bottom">{{ page.get_field('intro_text') }}</p>
+                                {% if page.get_field('ctas') %}
+                                    {% for item in page.get_field('ctas') %}
+                                        <a href="{{ item.link }}" class="btn btn-large {% if(item.title == 'Apply') %} btn-white-bordered {% else %} btn-primary {% endif %}">{{ item.title }}</a>
+                                    {% endfor %}
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% else %}
+    <section class="no-padding section-standard-hero margin-70px-top xs-margin-35px-top" style="background-image:url({{TimberImage(page.get_field('intro_background_image'))}}); background-size: cover !important; background-position: center !important; background-repeat: no-repeat !important">
+        <div class=" bg-primary-opacity">
+            <div class="container">
+                <div class="row equalize xs-equalize-auto">
+                    <div class="col-sm-6 col-xs-12">
+                        <div class="display-table width-100 height-100">
+                            <div class="display-table-cell vertical-align-middle padding-fourteen-tb xs-padding-80px-top sm-text-center width-100">
+                                <h2 class="intro-title">{{ page.get_field('intro_title') }}</h2>
+                                <p class="intro-text">{{ page.get_field('intro_text') }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-xs-12">
+                        <div class="display-table width-100 height-100">
+                            <div class="display-table-cell vertical-align-middle xs-padding-80px-bottom width-100 height-100 text-center">
+                                <img class="img-main" src="{{TimberImage(page.get_field('intro_logo_image'))}}">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endif %}

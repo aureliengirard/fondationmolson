@@ -1,0 +1,49 @@
+<footer class="footer footer-center-logo padding-40px-tb xs-padding-40px-tb">
+    <div class="container">
+        <div class="row equalize xs-equalize-auto hidden-md hidden-sm hidden-xs">
+            <div class="col-md-5 col-sm-5 col-xs-12 text-center display-table xs-margin-15px-bottom">
+                <div class="display-table-cell vertical-align-middle">
+                    <ul class="footer-navigation">
+                        {% for item in menu.get_items|slice(0,3) %}
+                            <li>
+                                <a href="{{ item.link }}" class="inner-link text-white">{{ item.title }}</a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-2 col-sm-2 col-xs-12 text-center xs-margin-15px-bottom">
+                <a href="{{ site.url }}">
+                    <img class="footer-logo" src="{{ theme.link }}/static/img/logo-transparent-light.png" data-at2x="{{ theme.link }}/static/img/logo-transparent-light.png" alt="Foundation Molson" width="112" height="28">
+                </a>
+            </div>
+            <div class="col-md-5 col-sm-5 col-xs-12 text-center display-table">
+                <div class="display-table-cell vertical-align-middle">
+                    <ul class="footer-navigation">
+                        {% for item in menu.get_items|slice(3,6) %}
+                            <li>
+                                <a href="{{ item.link }}" class="inner-link text-white">{{ item.title }}</a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row visible-md visible-sm visible-xs">
+            <div class="col-sm-12 text-center margin-40px-bottom">
+                <a href="{{ site.url }}">
+                    <img class="footer-logo" src="{{ theme.link }}/static/img/logo-transparent-light.png" data-at2x="{{ theme.link }}/static/img/logo-transparent-light.png" alt="Foundation Molson" width="112" height="28">
+                </a>
+            </div>
+            <div class="col-sm-12 text-center xs-margin-15px-bottom">
+                <ul class="footer-navigation">
+                    {% for item in menu.get_items %}
+                        <li>
+                            <a href="{{ item.link }}" class="inner-link text-white">{{ item.title }}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>

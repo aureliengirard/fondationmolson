@@ -1,8 +1,15 @@
-<div class="col-4">
-    <a href="{{ post.link }}"><img src="{{ post.thumbnail.src("medium") }}" alt="{{ post.title }}"></a>
-</div>
-<div class="col-8">
-    <h5><a href="{{ post.link }}">{{ post.title }}</a></h5>
-    <h6>{{ post.date }}</h6>
-    <div class="">{{ post.preview.read_more('') }}</div>
+<div class="equalize sm-equalize-auto margin-80px-bottom display-inline-block xs-text-center blog-item">
+    <div class="col-md-5 margin-40px-bottom padding-25-lr">
+        <a href="{{ post.link }}">
+            <div class="blog-img-wrapper" style="background-image:url({{ post.thumbnail.src("medium") }});"></div>
+        </a>
+    </div>
+    <div class="col-md-7 padding-25-lr">
+        <div class="blog-body">
+            <span class="blog-date">{{ post.date|date("m/d/Y") }}</span>
+            <a href="{{ post.link }}"><h5 class="blog-title">{{ post.title }}</h5></a>
+            <p class="blog-text">{{ post.preview.read_more('')|length > 50 ? post.preview.read_more('')|slice(0, 100) ~ '...' :post.preview.read_more('')  }}</p>
+            <a href="{{ post.link }}"><span class="blog-link">Read more</span></a>
+        </div>
+    </div>
 </div>

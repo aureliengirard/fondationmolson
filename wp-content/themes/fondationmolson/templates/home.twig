@@ -1,68 +1,100 @@
 {% extends "base.twig" %}
 
 {% block header %}
-{% include 'partial/_jumbotron.twig' with { page: page } %}
+    {% include 'partial/_jumbotron.twig' with { page: page } %}
 {% endblock %}
 
 {% block content %}
-<div id="" class="container">
     <!-- About Section -->
-    <div class="row">
-        <div class="col-12">
-            <h2>{{ page.about_section_title }}</h2>
-            <div class="">{{ page.about_section_text }}</div>
-            <p><a href="{{ page.about_section_cta_link }}" class="btn btn-primary">{{ page.about_section_cta_title }}</a></p>
-        </div>
-    </div>
-
-    <!-- Fields of Intervention Section -->
-    <div class="row">
-        <div class="col-12">
-            <h2>{{ page.fields_of_intervention_section_title }}</h2>
-        </div>
-    </div>
-    <div class="row">
-        {% for item in page.get_field('fields_of_intervention') %}
-        <div class="col-sm-1 col-lg-4">
-            <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="{{ TimberImage(item.image).src("medium") }}" alt="{{ item.title }}">
-                <div class="card-body">
-                    <h5 class="card-title">{{ item.title }}</h5>
-                    <p class="card-text">{{ item.text }}</p>
+    <section class="no-padding section-about">
+        <div class="container-fluid">
+            <div class="row equalize sm-equalize-auto">
+                <div class="col-sm-6 col-xs-12 no-padding">
+                    <div class="display-table width-100 height-100" style="background-image:url({{TimberImage(page.get_field('about_section_background_left'))}});">
+                        <div class="display-table-cell vertical-align-middle padding-twelve-all xs-padding-80px-tb sm-text-center width-100 bg-primary-opacity">
+                            <h2 class="title margin-20px-bottom  font-weight-500">{{ page.about_section_title }}</h2>
+                            <p class="text margin-40px-bottom">{{ page.about_section_text|striptags('<br>')|raw }}</p>
+                            <a href="{{ page.about_section_cta_link }}" class="btn btn-primary btn-large">{{ page.about_section_cta_title }}</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-xs-12 no-padding">
+                    <div class="display-table width-100 height-100" style="background-image:url({{TimberImage(page.get_field('about_section_background_right'))}});">
+                        <div class="display-table-cell vertical-align-middle xs-padding-80px-tb width-100 height-100 text-center">
+                            <img class="img-main" src="{{TimberImage(page.get_field('about_section_main_image'))}}">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        {% endfor %}
-    </div>
-    <div class="row">
-        <div class="col-12">
-            <p><a href="{{ page.fields_of_intervention_section_cta_link }}" class="btn btn-primary">{{ page.fields_of_intervention_section_cta_title }}</a></p>
-        </div>
-    </div>
+    </section>
 
-    <!-- News Section -->
-    <div class="row">
-        <div class="col-12">
-            <h2>{{ page.news_section_title }}</h2>
-        </div>
-    </div>
-    <div class="row">
-        {% for post in posts %}
-        <div class="col-sm-1 col-lg-4">
-            <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="{{ post.thumbnail.src("medium") }}" alt="{{ post.title }}">
-                <div class="card-body">
-                    <a href="{{ post.link }}"><h5 class="card-title">{{ post.title }}</h5></a>
-                    <p class="card-text">{{ post.preview.read_more('') }}</p>
+    <!-- Fields of Intervention -->
+    <section class="section-fields padding-80px-tb">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 center-col margin-60px-bottom text-center">
+                    <h2 class="text-secondary font-weight-500 title">{{ page.fields_of_intervention_section_title }}</h2>
+                </div>
+            </div>
+            <div class="row">
+                {% for item in page.get_field('fields_of_intervention') %}
+                    <div class="col-sm-4 fields-item">
+                        <div class="fields-img-wrapper" style="background-image:url({{ TimberImage(item.image).src("medium") }});"></div>
+                        <div class="fields-body">
+                            <h5 class="fields-title">{{ item.title }}</h5>
+                            <p class="fields-text">{{ item.text }}</p>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <a href="{{ page.fields_of_intervention_section_cta_link }}" class="btn btn-primary btn-large">{{ page.fields_of_intervention_section_cta_title }}</a>
                 </div>
             </div>
         </div>
-        {% endfor %}
-    </div>
-    <div class="row">
-        <div class="col-12">
-            <p><a href="{{ page.news_section_cta_link }}" class="btn btn-primary">{{ page.news_section_title }}</a></p>
+    </section>
+
+    <!-- News -->
+    <section class="no-padding section-news">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-12 col-xs-12 no-padding">
+                    <div class="display-table width-100 height-100" style="background-image:url({{TimberImage(page.get_field('news_section_background_image'))}}); background-size: cover !important; background-position: center !important; background-repeat: no-repeat !important">
+                        <div class="display-table-cell vertical-align-middle padding-80px-tb width-100 bg-primary-opacity">
+                            <div class="row">
+                                <div class="col-sm-12 center-col margin-60px-bottom text-center">
+                                    <h2 class="text-secondary font-weight-500 title">{{ page.news_section_title }}</h2>
+                                </div>
+                            </div>
+                            <div class="container">
+                                <div class="row equalize xs-equalize-auto">
+                                    {% for post in posts %}
+                                        <div class="col-md-4 col-sm-12">
+                                            <div class="news-item">
+                                                <a href="{{ post.link }}"><div class="news-img-wrapper" style="background-image:url({{ post.thumbnail.src("medium") }});"></div></a>
+                                                <div class="news-body height-450px md-height-500px sm-height-auto xs-height-auto">
+                                                    <span class="news-date">{{ post.date|date("m/d/Y") }}</span>
+                                                    <a href="{{ post.link }}"><h5 class="news-title">{{ post.title|length > 50 ? post.title|slice(0, 100) ~ '...' :post.title  }}</h5></a>
+
+                                                    <p class="news-text">{{ post.preview.read_more('')|length > 50 ? post.preview.read_more('')|slice(0, 100) ~ '...' :post.preview.read_more('')  }}</p>
+                                                    <a href="{{ post.link }}"><span class="news-link">Read more</span></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12 text-center">
+                                    <a href="{{ page.news_section_cta_link }}" class="btn btn-primary btn-large">{{ page.news_section_title }}</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
+    </section>
 {% endblock %}

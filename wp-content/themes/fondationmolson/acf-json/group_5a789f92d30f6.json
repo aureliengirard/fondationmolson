@@ -41,6 +41,25 @@
             "new_lines": ""
         },
         {
+            "key": "field_5ac3b988029dd",
+            "label": "Communities",
+            "name": "communities",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
             "key": "field_5a789ffd98b85",
             "label": "Intro Background Image",
             "name": "intro_background_image",
@@ -131,28 +150,7 @@
             {
                 "param": "page_template",
                 "operator": "==",
-                "value": "default"
-            }
-        ],
-        [
-            {
-                "param": "page_template",
-                "operator": "==",
                 "value": "home.php"
-            }
-        ],
-        [
-            {
-                "param": "page_template",
-                "operator": "==",
-                "value": "blog.php"
-            }
-        ],
-        [
-            {
-                "param": "page_template",
-                "operator": "==",
-                "value": "fields_of_intervention.php"
             }
         ]
     ],
@@ -164,5 +162,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1517932822
+    "modified": 1522862778
 }

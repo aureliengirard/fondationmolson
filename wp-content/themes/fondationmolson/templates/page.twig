@@ -5,11 +5,31 @@
 {% endblock %}
 
 {% block content %}
-<div id="" class="container">
-    <div class="row">
-        <div class="col-12">
-			{{ page.content }}
-        </div>
-    </div>
-</div>
+    {% for section in page.get_field('sections') %}
+        {% if section.section_type == "standard" %}
+            <section class="section-grant-standard padding-80px-tb" style="background-image:url({{TimberImage(section.section_background_image)}}); background-size: cover !important; background-position: center !important; background-repeat: no-repeat !important">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12 center-col no-margin last-paragraph-no-margin">
+                            <h2 class="text-secondary font-weight-400 title margin-40px-bottom">{{ section.section_title }}</h2>
+                            <div class="text-grey text-medium text">{{ section.section_text }}</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        {% else %}
+            <section class="no-padding section-grant-extended" style="background-image:url({{TimberImage(section.section_background_image)}}); background-size: cover !important; background-position: center !important; background-repeat: no-repeat !important">
+                <div class="bg-primary-opacity">
+                    <div class="container padding-80px-tb">
+                        <div class="row">
+                            <div class="col-sm-12 center-col last-paragraph-no-margin">
+                                <h2 class="text-white font-weight-400 title margin-40px-bottom">{{ section.section_title }}</h2>
+                                <div class="text-white text-medium text">{{ section.section_text }}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        {% endif %}
+    {% endfor %}
 {% endblock %}

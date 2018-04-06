@@ -1,37 +1,27 @@
 <!doctype html>
-<html class="" {{ site.language_attributes }}>
+<html {{ site.language_attributes }}>
 	<head>
-	{% block html_head_container %}
-		{% include 'html-header.twig' %}
-		{% block head %}
-		{% endblock %}
-	{% endblock %}
+        {% block html_head_container %}
+            {% include 'html-header.twig' %}
+            {% block head %}
+            {% endblock %}
+        {% endblock %}
 	</head>
 
-	<body class="{{body_class}} static-bg" data-template="base.twig">
-		<div id="nav" class="">
-				<div class="container px-0">
-					{% block navbar %}
-					{% include 'partial/navbar.twig' %}
-					{% endblock navbar %}
-				</div>
-		</div>
+	<body>
+        {% block navbar %}
+            {% include 'partial/navbar.twig' %}
+        {% endblock navbar %}
 
-		<header class="header">
-			{% block header %}
-			{% endblock %}
-		</header>
+        {% block header %}{% endblock %}
+        {% block content %}{% endblock %}
 
-		<section id="main-content" class="content-wrapper">
-			{% block content %}
-			{% endblock %}
-		</section>
+        {% block footer %}
+            {% include 'footer.twig' %}
+        {% endblock %}
+
+        {% include 'libraries.twig' %}
+
+        {{ function('wp_footer') }}
 	</body>
-
-	<footer id="footer" class="">
-		{% block footer %}
-		{% include 'footer.twig' %}
-		{% endblock %}
-		{{ function('wp_footer') }}
-	</footer>
 </html>

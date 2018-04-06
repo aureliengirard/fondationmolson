@@ -40,28 +40,28 @@ class StarterSite extends TimberSite {
 
 	function register_local_scripts() {
 		// If not in admin, load newer version of jquery
-		if (!is_admin()) {
-			wp_deregister_script('jquery');
-			wp_register_script('jquery', get_template_directory_uri() . '/static/js/jquery-3.2.1.min.js', array(), '3.2.1');
-			wp_enqueue_script('jquery');
-			wp_register_script('jquery-ui', get_template_directory_uri() . '/static/js/jquery-ui.js', ['jquery']);
-			wp_enqueue_script('jquery-ui');
-		}
+//		if (!is_admin()) {
+//			wp_deregister_script('jquery');
+//			wp_register_script('jquery', get_template_directory_uri() . '/static/js/jquery-3.2.1.min.js', array(), '3.2.1');
+//			wp_enqueue_script('jquery');
+//			wp_register_script('jquery-ui', get_template_directory_uri() . '/static/js/jquery-ui.js', ['jquery']);
+//			wp_enqueue_script('jquery-ui');
+//		}
 
-		wp_register_script('popper', get_template_directory_uri() . '/static/js/popper.js', ['jquery']);
-		wp_enqueue_script('popper');
-		wp_register_script('bootstrap', get_template_directory_uri() . '/static/js/bootstrap.min.js', ['jquery']);
-		wp_enqueue_script('bootstrap');
-		wp_register_script('fontawesome', get_template_directory_uri() . '/static/js/fontawesome-all.min.js', ['jquery']);
-		wp_enqueue_script('fontawesome');
+//		wp_register_script('popper', get_template_directory_uri() . '/static/js/popper.js', ['jquery']);
+//		wp_enqueue_script('popper');
+//		wp_register_script('bootstrap', get_template_directory_uri() . '/static/js/bootstrap.min.js', ['jquery']);
+//		wp_enqueue_script('bootstrap');
+//		wp_register_script('fontawesome', get_template_directory_uri() . '/static/js/fontawesome-all.min.js', ['jquery']);
+//		wp_enqueue_script('fontawesome');
 
-		wp_enqueue_style('bootstrap-css', get_stylesheet_directory_uri() . '/static/css/bootstrap.css');
-		wp_enqueue_style('fontawesome-css', get_stylesheet_directory_uri() . '/static/css/fa-svg-with-js.css');
+//		wp_enqueue_style('bootstrap-css', get_stylesheet_directory_uri() . '/static/css/bootstrap.css');
+//		wp_enqueue_style('fontawesome-css', get_stylesheet_directory_uri() . '/static/css/fa-svg-with-js.css');
 
 		// wp_enqueue_style('base-css', get_stylesheet_directory_uri() . '/static/css/base.css');
-		wp_enqueue_style('main-css', get_stylesheet_directory_uri() . '/static/css/main.css');
+//		wp_enqueue_style('main-css', get_stylesheet_directory_uri() . '/static/css/main.css');
 
-		wp_enqueue_style( 'wpb-google-fonts', 'https://fonts.googleapis.com/css?family=Playfair+Display:400,700,700i|Work+Sans:400,600', false );
+//		wp_enqueue_style( 'wpb-google-fonts', 'https://fonts.googleapis.com/css?family=Playfair+Display:400,700,700i|Work+Sans:400,600', false );
 	}
 
 	function add_to_context( $context ) {

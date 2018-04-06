@@ -4,52 +4,76 @@
 {% endblock %}
 
 {% block content %}
-<div id="" class="container">
-    <div class="row">
-        <div class="col-12">
-            <h2>{{ post.title }}</h2>
-            <div class="">{{ post.date }}</div>
-        </div>
-    </div>
 
-    <div class="row">
-        <div class="col-12">
-            <img src="{{ post.thumbnail.src("full") }}" class="img-fluid" alt="{{ post.title }}">
+    <section class="no-padding section-standard-hero height-400px sm-height-auto margin-70px-top xs-margin-35px-top">
+        <div class="bg-primary-opacity">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12 xs-no-padding sm-padding-25px-lr">
+                        <img src="{{ post.thumbnail.src("full") }}" class="img-fluid" alt="{{ post.title }}">
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
+    </section>
 
-    <div class="row">
-        <div class="col-12">
-            <div class="">{{ post.content }}</div>
+    <section class="section-single-post padding-80px-tb">
+        <div class="container">
+            <div class="row padding-60px-bottom">
+                <div class="col-sm-12 last-paragraph-no-margin">
+                    <span class="single-post-date">{{ post.date }}</span>
+                    <h5 class="single-post-title">{{ post.title }}</h5>
+                    <div class="single-post-text">{{ post.content }}</div>
+                </div>
+            </div>
+            {% set gallery = post.get_field("gallery") %}
+            {% if gallery %}
+                <div class="row">
+                    <div class="col-sm-12 padding-5px-lr">
+                        <ul class="portfolio-grid work-4col hover-option2 gutter-small">
+                            <li class="grid-sizer"></li>
+                            {% for item in gallery %}
+                                {% set image = TimberImage(item) %}
+                                <li class="grid-item">
+                                    <a href="{{ image.src("full") }}" title="{{ image.title }}" data-group="four-columns-zoom-animation" class="lightbox-group-gallery-item">
+                                        <figure>
+                                            <div class="portfolio-img bg-extra-dark-gray"><img src="{{ image.src("medium") }}" alt="{{ image.title }}" class="project-img-gallery"/></div>
+                                            <figcaption>
+                                                <div class="portfolio-hover-main text-center">
+                                                    <div class="portfolio-hover-box vertical-align-middle">
+                                                        <div class="portfolio-hover-content position-relative">
+                                                            <i class="ti-zoom-in text-white fa-2x"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </figcaption>
+                                        </figure>
+                                    </a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            {% endif %}
         </div>
-    </div>
-
-    {% set gallery = post.get_field("gallery") %}
-    {% if gallery %}
-    <div class="row">
-        <div class="col-12">
-            <ul>
-                {% for item in gallery %}
-                {% set image = TimberImage(item) %}
-                <li><img src="{{ image.src("medium") }}" alt="{{ image.title }}"></li>
-                {% endfor %}
-            </ul>
-        </div>
-    </div>
-    {% endif %}
-
+    </section>
     {% set related_news = post.get_field("related_news") %}
     {% if related_news %}
-    <div class="row">
-        <div class="col-12">
-            <h3>{{ __('Related Articles', 'news') }}</h3>
-        </div>
-    </div>
-    {% for item in related_news %}
-    <article class="row">
-        {% include 'partial/_post_tease.twig' with { post: item.post } %}
-    </article>
-    {% endfor %}
+        <section class="section-grant-standard no-padding section-blog">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12 center-col margin-60px-bottom text-center">
+                        <h2 class="text-secondary font-weight-500 title margin-80px-bottom">{{ __('Related Articles', 'news') }}</h2>
+                    </div>
+                </div>
+                <div class="row equalize xs-equalize-auto">
+                    {% for item in related_news %}
+                        <div class="col-md-6">
+                            {% include 'partial/_post_tease.twig' with { post: item.post } %}
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
     {% endif %}
-</div>
 {% endblock %}

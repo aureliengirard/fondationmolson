@@ -1,43 +1,93 @@
 {% extends "base.twig" %}
 
 {% block header %}
-{% include 'partial/_jumbotron.twig' with { page: page } %}
+    {% include 'partial/_jumbotron.twig' with { page: page } %}
 {% endblock %}
 
 {% block content %}
-<div id="" class="container">
     {% for section in page.get_field('sections') %}
-    <div class="row">
-        <div class="col-12">
-            <h2>{{ section.section_title }}</h2>
-            <div class="">{{ section.section_description }}</div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-12">
-            <h3>{{ section.areas_of_intervention_title }}</h3>
-        </div>
-    </div>
-    <div class="row">
-        {% if section.display_type == "columns"%}
-        {% for area in section.areas_of_intervention %}
-        <div class="col-sm-1 col-lg-4">
-            <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                    <h5 class="card-title">{{ area.area_title }}</h5>
-                    <p class="card-text">{{ area.area_description }}</p>
+        {% if section.section_type == "standard" %}
+            <section class="section-fields-standard padding-80px-tb" style="background-image:url({{TimberImage(section.section_background_image)}}); background-size: cover !important; background-position: center !important; background-repeat: no-repeat !important">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12 center-col margin-80px-bottom text-center last-paragraph-no-margin">
+                            <h2 class="text-secondary font-weight-400 title margin-40px-bottom">{{ section.section_title }}</h2>
+                            <p class="text-grey text-medium description">{{ section.section_description }}</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12 center-col margin-60px-bottom text-center">
+                            <h4 class="text-secondary font-weight-400 subtitle">{{ section.areas_of_intervention_title }}</h4>
+                        </div>
+                    </div>
+                    <div class="row">
+                        {% if section.display_type == "columns"%}
+                            {% for area in section.areas_of_intervention %}
+                                <div class="col-sm-4 fields-item last-paragraph-no-margin">
+                                    <div class="fields-img-wrapper" style="background-image:url({{ TimberImage(area.area_image).src("medium") }});"></div>
+                                    <div class="fields-body">
+                                        <h5 class="fields-title">{{ area.area_title }}</h5>
+                                        <p class="fields-text">{{ area.area_description }}</p>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        {% else %}
+                            <div class="swiper-slider-clients swiper-container swiper-container-horizontal margin-40px-bottom xs-margin-30px-bottom">
+                                <div class="swiper-wrapper">
+                                    {% for area in section.areas_of_intervention %}
+                                        <div class="swiper-slide text-center">
+                                            <div class="image-wrapper" style="background-image:url({{ area.area_image }});"></div>
+                                            <h6 class="slider-title text-secondary">{{ area.area_title }}</h6>
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        {% endif %}
+                    </div>
                 </div>
-            </div>
-        </div>
-        {% endfor %}
+            </section>
         {% else %}
-        <ul>
-            {% for area in section.areas_of_intervention %}
-            <li>{{ area.area_title }}</li>
-            {% endfor %}
-        </ul>
+            <section class="no-padding section-fields-extended" style="background-image:url({{TimberImage(section.section_background_image)}}); background-size: cover !important; background-position: center !important; background-repeat: no-repeat !important">
+                <div class="bg-primary-opacity">
+                    <div class="container padding-80px-tb">
+                        <div class="row">
+                            <div class="col-sm-12 center-col margin-80px-bottom text-center last-paragraph-no-margin">
+                                <h2 class="text-secondary font-weight-400 title margin-40px-bottom">{{ section.section_title }}</h2>
+                                <p class="text-grey text-medium description">{{ section.section_description }}</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12 center-col margin-60px-bottom text-center">
+                                <h4 class="text-secondary font-weight-400 subtitle">{{ section.areas_of_intervention_title }}</h4>
+                            </div>
+                        </div>
+                        <div class="row">
+                            {% if section.display_type == "columns"%}
+                                {% for area in section.areas_of_intervention %}
+                                    <div class="col-sm-4 fields-item">
+                                        <div class="fields-img-wrapper" style="background-image:url({{ TimberImage(area.area_image).src("medium") }});"></div>
+                                        <div class="fields-body">
+                                            <h5 class="fields-title">{{ area.area_title }}</h5>
+                                            <p class="fields-text">{{ area.area_description }}</p>
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            {% else %}
+                                <div class="swiper-slider-clients swiper-container swiper-container-horizontal margin-40px-bottom xs-margin-30px-bottom">
+                                    <div class="swiper-wrapper">
+                                        {% for area in section.areas_of_intervention %}
+                                            <div class="swiper-slide text-center">
+                                                <div class="image-wrapper" style="background-image:url({{ area.area_image }});"></div>
+                                                <h6 class="slider-title text-white">{{ area.area_title }}</h6>
+                                            </div>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </section>
         {% endif %}
-    </div>
     {% endfor %}
-</div>
 {% endblock %}
