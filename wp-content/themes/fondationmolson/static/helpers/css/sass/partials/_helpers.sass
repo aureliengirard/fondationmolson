@@ -1,0 +1,144 @@
+.bg-primary-opacity
+  background-color: rgba(21, 35, 73, 0.9)
+.bg-primary
+  background: $primary
+.bg-primary-gradient
+  +gradient-bg($primary)
+
+.mfp-primary-bg
+  background: $primary
+.mfp-secondary-bg
+  background: $secondary
+
+.mfp-bg
+  background: $primary
+
+.bg-secondary-opacity
+  background-color: rgba(241, 183, 47, 0.7)
+.bg-secondary
+  background: $secondary
+.mfp-secondary-bg
+  background: $secondary
+
+.text-primary
+  color: $primary
+
+a
+  &.text-primary
+    color: $primary
+    &:hover,
+    &:focus,
+    &:active
+      color: darken($primary, 10%)
+
+.text-secondary
+  color: $secondary
+
+a
+  &.text-secondary
+    color: $secondary
+    &:hover,
+    &:focus,
+    &:active
+      color: darken($secondary, 10%)
+
+.text-grey
+  color: $grey
+
+a
+  &.text-grey
+    color: $grey
+    &:hover,
+    &:focus,
+    &:active
+      color: darken($grey, 10%)
+
+.text-white
+  p
+    color: $white
+
+.img-white
+  -webkit-filter: brightness(0) invert(1)
+  filter: brightness(0) invert(1)
+
+.alt-font
+  font-family: $secondary-font
+  font-weight: $semi
+
+.text-hover-white
+  color: $white
+  &:hover,
+  &:active,
+  &:focus
+    color: $white
+
+.pagination
+  ul.pagination
+    display: inline-block
+    margin-left: 0
+    margin-bottom: 0
+    padding: 0
+
+.pagination>li>a,
+.pagination>li>span
+  background-color: $primary
+  color: $white
+  border-color: $grey-light-extra
+  font-size: 14px
+  line-height: 40px
+  padding: 0 20px
+
+.pagination>li:first-child>a,
+.pagination>li:first-child>span
+  margin-left: 0
+  border-top-left-radius: 0
+  border-bottom-left-radius: 0
+
+.pagination>li:last-child>a,
+.pagination>li:last-child>span
+  margin-left: 0
+  border-top-right-radius: 0
+  border-bottom-right-radius: 0
+
+.pagination>.active>a,
+.pagination>.active>a:focus,
+.pagination>.active>a:hover,
+.pagination>.active>span,
+.pagination>.active>span:focus,
+.pagination>.active>span:hover
+  background-color: lighten($primary, 10%)
+  color: $white
+  border-color: $grey-light-extra
+
+.pagination>li>a:focus,
+.pagination>li>a:hover,
+.pagination>li>span:focus,
+.pagination>li>span:hover
+  background-color: lighten($primary, 10%)
+  color: $white
+  border-color: $grey-light-extra
+
+.pagination
+  a
+    background-color: $white
+    color: $primary
+    &:hover,
+    &:active,
+    &:focus
+      background-color: $white
+      color: $primary
+  .active a
+    background-color: $white
+    color: $primary
+
+.pagination .disabled span,
+.pagination .disabled a,
+.pagination .disabled a:hover
+  color: $white
+  background-color: $primary
+  cursor: default
+
+.pagination>li>a,
+.pagination>li>span
+  margin-left: 0
+
