@@ -1,16 +1,9 @@
 header a.logo img
+  max-height: 40px
   @media (min-width: $break-md)
-    max-height: 40px
-    margin: 0 0 0 15px
+    margin: 0 0 0 0px
   @media (max-width: $break-md)
-    max-height: 40px
     margin: 0 0 0 15px
-  @media (max-width: $break-sm)
-    max-height: 40px
-    margin: 0 0 0 10px
-  @media (max-width: $break-xs)
-    max-height: 30px
-    margin: 0 0 0 10px
 
 header
   z-index: 9999
@@ -89,7 +82,6 @@ nav.navbar.bootsnav.navbar-primary ul.nav > li > a
       +transition
     @media (max-width: $break-md)
       padding: 10px
-    @media (max-width: $break-xs)
 
 .navbar-primary
   +box-shadow(1px 2px 4px 0px rgba(0, 0, 0, 0.1))
@@ -126,13 +118,9 @@ nav.navbar.bootsnav.navbar-primary ul.nav > li > a
 .section-hero
   .intro-title
     font-family: $secondary-font
-    font-size: 36px
-    line-height: 36px
     color: $white
   .intro-text
-    font-family: $primary-font
     color: $white
-    font-size: 16px
     font-weight: $regular
   .communities-text
     color: $white
@@ -154,27 +142,20 @@ nav.navbar.bootsnav.navbar-primary ul.nav > li > a
   .intro-text
     font-family: $primary-font
     color: $white
-    font-size: 16px
     font-weight: $regular
     margin: 0
   .img-main
     width: 65%
 
-
 .section-about
   .title
-    font-size: 36px
     color: $white
     letter-spacing: 0
   .text
-    font-size: 16px
     color: $white
-  .img-main
-    width: 60%
-    
+
 .section-fields
   .title
-    font-size: 36px
     letter-spacing: 0
   .fields-item
     text-align: center
@@ -188,22 +169,14 @@ nav.navbar.bootsnav.navbar-primary ul.nav > li > a
       background-position: center !important
       background-repeat: no-repeat !important
     .fields-title
-      font-size: 18px
-      line-height: 28px
-      font-weight: $regular
       color: $secondary
       text-transform: uppercase
     .fields-text
-      font-size: 16px
       color: $grey
 
 .section-fields-standard
   .title
-    font-size: 36px
     letter-spacing: 0
-  .description
-    font-size: 18px
-    line-height: 28px
   .subtitle
     font-size: 24px
     letter-spacing: 0
@@ -219,60 +192,27 @@ nav.navbar.bootsnav.navbar-primary ul.nav > li > a
       background-position: center !important
       background-repeat: no-repeat !important
     .fields-title
-      font-size: 18px
-      line-height: 28px
-      font-weight: $regular
       color: $secondary
       text-transform: uppercase
     .fields-text
-      font-size: 16px
       color: $grey
 
 .section-fields-extended
   .title
-    font-size: 36px
     letter-spacing: 0
     color: $white
   .description
-    font-size: 18px
     line-height: 28px
     color: $white
   .subtitle
-    font-size: 24px
     letter-spacing: 0
     color: $white
 
 .section-grant-standard
   .title
-    font-size: 36px
     letter-spacing: 0
   .text
-    font-size: 16px
-    line-height: 24px
-    h1
-      font-size: 26px
-      line-height: 34px
-      color: $secondary
-    h2
-      font-size: 24px
-      line-height: 32px
-      color: $secondary
-    h3
-      font-size: 22px
-      line-height: 30px
-      color: $secondary
-    h4
-      font-size: 20px
-      line-height: 28px
-      color: $secondary
-    h5
-      font-size: 18px
-      line-height: 26px
-      color: $secondary
-    h6
-      font-size: 16px
-      line-height: 24px
-      color: $secondary
+    color: $secondary
     ul
       list-style: none
       padding: 0
@@ -381,37 +321,10 @@ nav.navbar.bootsnav.navbar-primary ul.nav > li > a
 
 .section-grant-extended
   .title
-    font-size: 36px
     letter-spacing: 0
     color: $white
   .text
-    font-size: 16px
-    line-height: 24px
     color: $white
-    h1
-      font-size: 26px
-      line-height: 34px
-      color: $white
-    h2
-      font-size: 24px
-      line-height: 32px
-      color: $white
-    h3
-      font-size: 22px
-      line-height: 30px
-      color: $white
-    h4
-      font-size: 20px
-      line-height: 28px
-      color: $white
-    h5
-      font-size: 18px
-      line-height: 26px
-      color: $white
-    h6
-      font-size: 16px
-      line-height: 24px
-      color: $white
     ul
       list-style: none
       padding: 0
@@ -429,29 +342,34 @@ nav.navbar.bootsnav.navbar-primary ul.nav > li > a
 
 .section-news
   .title
-    font-size: 36px
     margin: 0
     color: $white
-    letter-spacing: 0
   .news-item
     text-align: left
     margin-bottom: 60px
     .news-img-wrapper
-      height: 200px
-      width: 200px
+      +flex
+      height: 220px
+      width: 220px
       margin: 0 auto
+      border: 1px solid $white
       border-radius: 50%
-      background-size: cover !important
-      background-position: center !important
-      background-repeat: no-repeat !important
-      z-index: 1
-      position: relative
-      @media (max-width: $break-sm)
-        height: 200px
-        width: 200px
-      @media (max-width: $break-xs)
-        height: 200px
-        width: 200px
+      .news-img-inner-wrapper
+          height: 200px
+          width: 200px
+          margin: auto
+          border-radius: 50%
+          background-size: cover !important
+          background-position: center !important
+          background-repeat: no-repeat !important
+          z-index: 1
+          position: relative
+          @media (max-width: $break-sm)
+            height: 200px
+            width: 200px
+          @media (max-width: $break-xs)
+            height: 200px
+            width: 200px
     .news-body
       background: $white
       padding: 150px 40px 40px
@@ -468,12 +386,10 @@ nav.navbar.bootsnav.navbar-primary ul.nav > li > a
         color: $secondary
         line-height: 28px
       .news-text
-        font-size: 16px
         color: $grey
         margin: 0 0 15px
       .news-link
         display: block
-        font-size: 16px
         color: $grey
         letter-spacing: 1px
         margin: 0 0 5px
@@ -516,12 +432,10 @@ nav.navbar.bootsnav.navbar-primary ul.nav > li > a
         color: $secondary
         line-height: 28px
       .blog-text
-        font-size: 16px
         color: $grey
         margin: 0 0 15px
       .blog-link
         display: block
-        font-size: 16px
         color: $grey
         letter-spacing: 1px
         margin: 0 0 5px
@@ -529,12 +443,10 @@ nav.navbar.bootsnav.navbar-primary ul.nav > li > a
 
 .section-single-post
   .title
-    font-size: 36px
     margin: 0
     letter-spacing: 0
   .single-post-date
     display: block
-    font-size: 16px
     font-weight: $regular
     margin: 0 0 15px
   .single-post-title
@@ -543,7 +455,6 @@ nav.navbar.bootsnav.navbar-primary ul.nav > li > a
     color: $secondary
     margin: 0 0 40px
   .single-post-text
-    font-size: 16px
     font-weight: $regular
     p
       strong
@@ -572,7 +483,7 @@ nav.navbar.bootsnav.navbar-primary ul.nav > li > a
     text-transform: uppercase
 
 .footer
-  background: #0c1b49
+  background: $blue
   .footer-logo
     width: 250px
     max-height: 320px

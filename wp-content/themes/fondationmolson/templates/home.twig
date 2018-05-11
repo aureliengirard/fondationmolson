@@ -9,20 +9,16 @@
     <section class="no-padding section-about">
         <div class="container-fluid">
             <div class="row equalize sm-equalize-auto">
-                <div class="col-sm-6 col-xs-12 no-padding">
-                    <div class="display-table width-100 height-100" style="background-image:url({{TimberImage(page.get_field('about_section_background_left'))}});">
-                        <div class="display-table-cell vertical-align-middle padding-twelve-all xs-padding-80px-tb sm-text-center width-100 bg-primary-opacity">
-                            <h2 class="title margin-20px-bottom  font-weight-500">{{ page.about_section_title }}</h2>
-                            <p class="text margin-40px-bottom">{{ page.about_section_text|striptags('<br>')|raw }}</p>
-                            <a href="{{ page.about_section_cta_link }}" class="btn btn-primary btn-large">{{ page.about_section_cta_title }}</a>
-                        </div>
+                <div class="col-sm-6 col-xs-12 bg-primary-blue" style="background-image:url({{TimberImage(page.get_field('about_section_background_left'))}});background-position: center right; background-repeat: no-repeat;">
+                    <div class="inner-column ml-sm-auto ">
+                        <h2 class="title margin-20px-bottom  font-weight-500">{{ page.about_section_title }}</h2>
+                        {{ page.get_field('about_section_text') }}
+                        <a href="{{ page.about_section_cta_link }}" class="btn btn-primary btn-large margin-20px-top">{{ page.about_section_cta_title }}</a>
                     </div>
                 </div>
-                <div class="col-sm-6 col-xs-12 no-padding">
-                    <div class="display-table width-100 height-100" style="background-image:url({{TimberImage(page.get_field('about_section_background_right'))}});">
-                        <div class="display-table-cell vertical-align-middle xs-padding-80px-tb width-100 height-100 text-center">
-                            <img class="img-main" src="{{TimberImage(page.get_field('about_section_main_image'))}}">
-                        </div>
+                <div class="col-sm-6 col-xs-12" style="background-image:url({{TimberImage(page.get_field('about_section_background_right'))}});">
+                    <div class="inner-column mr-sm-auto">
+                          <img src="{{TimberImage(page.get_field('about_section_main_image'))}}">
                     </div>
                 </div>
             </div>
@@ -37,15 +33,15 @@
                     <h2 class="text-secondary font-weight-500 title">{{ page.fields_of_intervention_section_title }}</h2>
                 </div>
             </div>
-            <div class="row">
+            <div class="row space-between">
                 {% for item in page.get_field('fields_of_intervention') %}
-                    <div class="col-sm-4 fields-item">
-                        <div class="fields-img-wrapper" style="background-image:url({{ TimberImage(item.image).src("medium") }});"></div>
-                        <div class="fields-body">
-                            <h5 class="fields-title">{{ item.title }}</h5>
-                            <p class="fields-text">{{ item.text }}</p>
-                        </div>
+                <div class="col-sm-3 fields-item">
+                    <div class="fields-img-wrapper" style="background-image:url({{ TimberImage(item.image).src("medium") }});"></div>
+                    <div class="fields-body">
+                        <h4 class="fields-title">{{ item.title }}</h4>
+                        <p class="fields-text">{{ item.text }}</p>
                     </div>
+                </div>
                 {% endfor %}
             </div>
             <div class="row">
@@ -73,10 +69,14 @@
                                     {% for post in posts %}
                                         <div class="col-md-4 col-sm-12">
                                             <div class="news-item">
-                                                <a href="{{ post.link }}"><div class="news-img-wrapper" style="background-image:url({{ post.thumbnail.src("medium") }});"></div></a>
+                                                <a href="{{ post.link }}">
+                                                  <div class="news-img-wrapper">
+                                                    <div class="news-img-inner-wrapper" style="background-image:url({{ post.thumbnail.src("medium") }});"></div>
+                                                  </div>
+                                                </a>
                                                 <div class="news-body height-450px md-height-500px sm-height-auto xs-height-auto">
                                                     <span class="news-date">{{ post.date|date("m/d/Y") }}</span>
-                                                    <a href="{{ post.link }}"><h5 class="news-title">{{ post.title|length > 50 ? post.title|slice(0, 100) ~ '...' :post.title  }}</h5></a>
+                                                    <a href="{{ post.link }}"><h3 class="news-title">{{ post.title|length > 50 ? post.title|slice(0, 100) ~ '...' :post.title  }}</h3></a>
 
                                                     <p class="news-text">{{ post.preview.read_more('')|length > 50 ? post.preview.read_more('')|slice(0, 100) ~ '...' :post.preview.read_more('')  }}</p>
                                                     <a href="{{ post.link }}"><span class="news-link">Read more</span></a>
