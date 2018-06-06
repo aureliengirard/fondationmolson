@@ -1,5 +1,5 @@
 {% if 'home' in body_class %}
-    <section class="no-padding margin-70px-top xs-margin-35px-top xs-background-image-center section-hero" style="background-image:url({{TimberImage(page.get_field('intro_background_image'))}}); background-size: cover !important; background-position: center !important; background-repeat: no-repeat !important">
+    <header class="no-padding margin-100px-top xs-margin-35px-top xs-background-image-center section-hero" style="background-image:url({{TimberImage(page.get_field('intro_background_image'))}}); background-size: cover !important; background-position: center !important; background-repeat: no-repeat !important">
         <div class="container-fluid position-relative">
             <div class="row">
                 <div class="col-sm-6 hidden-xs"></div>
@@ -20,7 +20,7 @@
         </div>
     </section>
 {% else %}
-    <section class="no-padding section-standard-hero margin-70px-top xs-margin-35px-top" style="background-image:url({{TimberImage(page.get_field('intro_background_image'))}}); background-size: cover !important; background-position: center !important; background-repeat: no-repeat !important">
+    <header class="no-padding section-standard-hero margin-100px-top xs-margin-35px-top" style="background-image:url({{TimberImage(page.get_field('intro_background_image'))}}); background-size: cover !important; background-position: center !important; background-repeat: no-repeat !important">
         <div class=" bg-primary-opacity">
             <div class="container">
                 <div class="row equalize xs-equalize-auto">
