@@ -1,10 +1,10 @@
 {
     "key": "group_5a789f92d30f6",
-    "title": "Page Header Fields",
+    "title": "Home Header Fields",
     "fields": [
         {
             "key": "field_5a789fac98b83",
-            "label": "Intro Title",
+            "label": "Title",
             "name": "intro_title",
             "type": "text",
             "instructions": "",
@@ -23,7 +23,7 @@
         },
         {
             "key": "field_5a789fe798b84",
-            "label": "Intro Text",
+            "label": "Quote",
             "name": "intro_text",
             "type": "textarea",
             "instructions": "",
@@ -42,7 +42,7 @@
         },
         {
             "key": "field_5ac3b988029dd",
-            "label": "Communities",
+            "label": "Quote Author",
             "name": "communities",
             "type": "text",
             "instructions": "",
@@ -99,8 +99,8 @@
             "collapsed": "",
             "min": 0,
             "max": 0,
-            "layout": "row",
-            "button_label": "",
+            "layout": "block",
+            "button_label": "Add a CTA",
             "sub_fields": [
                 {
                     "key": "field_5a78ae65bb6e6",
@@ -111,7 +111,7 @@
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "",
+                        "width": "50",
                         "class": "",
                         "id": ""
                     },
@@ -130,7 +130,7 @@
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "",
+                        "width": "50",
                         "class": "",
                         "id": ""
                     },
@@ -159,8 +159,21 @@
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": "",
+    "hide_on_screen": [
+        "the_content",
+        "excerpt",
+        "custom_fields",
+        "discussion",
+        "comments",
+        "revisions",
+        "slug",
+        "author",
+        "featured_image",
+        "categories",
+        "tags",
+        "send-trackbacks"
+    ],
     "active": 1,
     "description": "",
-    "modified": 1522862778
+    "modified": 1528316240
 }

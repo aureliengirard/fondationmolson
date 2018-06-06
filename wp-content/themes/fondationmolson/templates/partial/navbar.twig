@@ -4,7 +4,11 @@
             <div class="row">
                 <div class="col-lg-2 col-md-2 no-padding sm-padding-15px-lr">
                     <a href="{{ site.url }}" title="Foundation Molson" class="logo">
-                        <img src="{{ theme.link }}/static/img/logo_dark.png" class="logo-dark default" alt="Foundation Molson">
+                      {% if site.language == 'en-CA' %}
+                        <img src="{{ theme.link }}/static/img/logo_dark_en.png" class="logo-dark default" alt="The Molson Foundation">
+                      {% elseif site.language == 'fr-CA' %}
+                        <img src="{{ theme.link }}/static/img/logo_dark_fr.png" class="logo-dark default" alt="La Fondation Molson">
+                      {% endif %}
                     </a>
                 </div>
                 <div class="col-lg-8 col-md-9 text-center hidden-sm hidden-xs no-padding">

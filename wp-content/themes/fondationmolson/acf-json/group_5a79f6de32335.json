@@ -1,6 +1,6 @@
 {
     "key": "group_5a79f6de32335",
-    "title": "Posts Extra Fields",
+    "title": "Article",
     "fields": [
         {
             "key": "field_5a79f69775e6f",
@@ -88,5 +88,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1517942708
+    "modified": 1528316407
 }
