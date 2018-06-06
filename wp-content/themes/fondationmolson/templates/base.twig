@@ -14,8 +14,9 @@
         {% endblock navbar %}
 
         {% block header %}{% endblock %}
-        {% block content %}{% endblock %}
-
+				<main>
+				{% block content %}{% endblock %}
+				</main>
         {% block footer %}
             {% include 'footer.twig' %}
         {% endblock %}

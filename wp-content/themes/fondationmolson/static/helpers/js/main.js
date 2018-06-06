@@ -1283,7 +1283,7 @@ $(document).ready(function () {
     });
 
     /*==============================================================
-    mega menu width 
+    mega menu width
     ===============================================================*/
     $("ul.mega-menu-full").each(function (idx, elm) {
         var megaMenuWidth = 0;
@@ -1676,7 +1676,7 @@ $(document).ready(function () {
         $('body').toggleClass('left-nav-on');
     });
     /*==============================================================*/
-    //    hamburger menu 
+    //    hamburger menu
     /*==============================================================*/
     $(document).on('click', '.btn-hamburger', function () {
         $('.hamburger-menu').toggleClass('show-menu');
@@ -1816,7 +1816,7 @@ $(document).ready(function () {
     ==============================================================*/
 
     /*==============================================================*/
-    //magnificPopup Start 
+    //magnificPopup Start
     /*==============================================================*/
     $('.header-search-form').magnificPopup({
         mainClass: 'mfp-fade',
@@ -1862,7 +1862,7 @@ $(document).ready(function () {
     });
 
     /*==============================================================*/
-    //magnificPopup End 
+    //magnificPopup End
     /*==============================================================*/
     $("input.search-input").on("keypress", function (event) {
         if (event.which == 13 && !isMobile) {

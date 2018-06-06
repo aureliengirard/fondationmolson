@@ -1,0 +1,46 @@
+.container-fluid
+    .row
+        .col-sm-6
+            display: inherit
+            min-height: 43.5vw
+            .inner-column
+              @media (min-width: $break-xs)
+                margin-top: auto
+                margin-bottom: auto
+                padding: 40px 15px
+                max-width: ( $container * (6 / 12) )
+              @media (max-width: $break-sm)
+                padding-top: 80px
+                padding-bottom: 80px
+        &>:first-child
+            .inner-column
+              @media (min-width: $break-xs)
+                padding-right: 10%
+        &>:nth-last-child(1)
+            .inner-column
+              @media (min-width: $break-xs)
+                padding-left: 10%
+
+.ml-auto
+  margin-left: auto
+.mr-auto
+  margin-right: auto
+
+@media (min-width: $break-sm)
+  .ml-sm-auto
+    margin-left: auto
+  .mr-sm-auto
+    margin-right: auto
+
+@media (min-width: $break-md)
+  .mr-md-40
+    margin-right: 40px
+  .ml-md-40
+    margin-left: 40px
+
+main
+  section
+    &.padding-80px-tb:nth-last-child(1),
+    &:nth-last-child(1) .padding-80px-tb
+      @media (min-width: $break-sm)
+        padding-bottom: 180px !important

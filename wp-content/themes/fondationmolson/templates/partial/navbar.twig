@@ -7,7 +7,7 @@
                         <img src="{{ theme.link }}/static/img/logo_dark.png" class="logo-dark default" alt="Foundation Molson">
                     </a>
                 </div>
-                <div class="col-lg-8 col-md-8 text-center hidden-sm hidden-xs no-padding">
+                <div class="col-lg-8 col-md-9 text-center hidden-sm hidden-xs no-padding">
                     <ul id="accordion" class="nav navbar-nav navbar-center">
                         {% for item in menu.get_items %}
                             <li>
@@ -16,16 +16,18 @@
                         {% endfor %}
                     </ul>
                 </div>
-                <div class="col-lg-2 col-md-2 text-right hidden-sm hidden-xs no-padding">
+                <div class="col-lg-2 col-md-1 text-right hidden-sm hidden-xs no-padding">
                     <ul id="accordion" class="nav navbar-nav navbar-center lang">
-                        <li><a href="{{ site.url }}" class="extra active">EN</a></li>
-                        <li><a href="{{ site.url }}" class="extra">FR</a></li>
+                        {% filter shortcodes %}
+                          [wpml_language_switcher]
+                        {% endfilter %}
                     </ul>
                 </div>
                 <div class="col-md-4 col-sm-4 col-xs-6 center-col text-right visible-sm visible-xs">
                     <ul id="accordion" class="nav navbar-nav navbar-center lang">
-                        <li><a href="{{ site.url }}" class="extra active">EN</a></li>
-                        <li><a href="{{ site.url }}" class="extra">FR</a></li>
+                      {% filter shortcodes %}
+                        [wpml_language_switcher]
+                      {% endfilter %}
                     </ul>
                     <button class="navbar-toggle mobile-toggle top-0" type="button" id="open-button" data-toggle="collapse" data-target=".navbar-collapse">
                         <span></span>

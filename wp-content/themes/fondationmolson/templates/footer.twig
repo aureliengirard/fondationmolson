@@ -1,27 +1,27 @@
-<footer class="footer footer-center-logo padding-40px-tb xs-padding-40px-tb">
+<footer class="footer footer-center-logo padding-55px-tb md-padding-35px-tb sm-padding-20px-tb">
     <div class="container">
-        <div class="row equalize xs-equalize-auto hidden-md hidden-sm hidden-xs">
-            <div class="col-md-5 col-sm-5 col-xs-12 text-center display-table xs-margin-15px-bottom">
+        <div class="row xs-equalize-auto hidden-sm hidden-xs">
+            <div class="col-md-5 col-sm-5 col-xs-12 text-center display-table mr-auto xs-margin-15px-bottom">
                 <div class="display-table-cell vertical-align-middle">
-                    <ul class="footer-navigation">
+                    <ul class="footer-navigation mr-md-40">
                         {% for item in menu.get_items|slice(0,3) %}
-                            <li>
+                            <li class="{{ item.class }}">
                                 <a href="{{ item.link }}" class="inner-link text-white">{{ item.title }}</a>
                             </li>
                         {% endfor %}
                     </ul>
                 </div>
             </div>
-            <div class="col-md-2 col-sm-2 col-xs-12 text-center xs-margin-15px-bottom">
+            <div class="text-center xs-margin-15px-bottom footer-logo">
                 <a href="{{ site.url }}">
-                    <img class="footer-logo" src="{{ theme.link }}/static/img/logo-transparent-light.png" data-at2x="{{ theme.link }}/static/img/logo-transparent-light.png" alt="Foundation Molson" width="112" height="28">
+                    <img class="footer-logo-img" src="{{ theme.link }}/static/img/logo-footer.png" data-at2x="{{ theme.link }}/static/img/logo-transparent-light.png" alt="Foundation Molson" width="304" height="228">
                 </a>
             </div>
-            <div class="col-md-5 col-sm-5 col-xs-12 text-center display-table">
+            <div class="col-md-5 col-sm-5 col-xs-12 text-center display-table ml-auto">
                 <div class="display-table-cell vertical-align-middle">
-                    <ul class="footer-navigation">
+                    <ul class="footer-navigation ml-md-40">
                         {% for item in menu.get_items|slice(3,6) %}
-                            <li>
+                            <li class="{{ item.class }}">
                                 <a href="{{ item.link }}" class="inner-link text-white">{{ item.title }}</a>
                             </li>
                         {% endfor %}
@@ -29,13 +29,8 @@
                 </div>
             </div>
         </div>
-        <div class="row visible-md visible-sm visible-xs">
-            <div class="col-sm-12 text-center margin-40px-bottom">
-                <a href="{{ site.url }}">
-                    <img class="footer-logo" src="{{ theme.link }}/static/img/logo-transparent-light.png" data-at2x="{{ theme.link }}/static/img/logo-transparent-light.png" alt="Foundation Molson" width="112" height="28">
-                </a>
-            </div>
-            <div class="col-sm-12 text-center xs-margin-15px-bottom">
+        <div class="row visible-sm visible-xs">
+            <div class="col-sm-12 text-center">
                 <ul class="footer-navigation">
                     {% for item in menu.get_items %}
                         <li>

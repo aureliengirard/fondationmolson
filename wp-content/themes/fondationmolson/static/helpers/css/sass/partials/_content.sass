@@ -53,10 +53,10 @@ header nav .navbar-nav > li > a
   position: absolute
 
 header nav.navbar.navbar-primary .navbar-nav > li > a,
-nav.navbar.bootsnav.navbar-primary ul.nav > li > a
+nav.navbar.bootsnav.navbar-primary ul.nav > li > a,
   color: $grey
   &:hover,
-  &:active,
+  &:active
   &:focus
     color: $primary
     +transition
@@ -81,6 +81,36 @@ nav.navbar.bootsnav.navbar-primary ul.nav > li > a
       +transition
     @media (max-width: $break-md)
       padding: 10px
+
+header nav.navbar.navbar-primary .navbar-nav .wpml-ls-legacy-list-horizontal
+  padding: 0
+header nav.navbar.navbar-primary .navbar-nav li.wpml-ls-item
+  margin-left: 5px
+  a
+    color: $primary
+    background: transparent
+    border: 1px solid transparent
+    padding: 10px
+    margin: 0
+    font-size: 14px
+    font-weight: 400
+    text-transform: uppercase
+    letter-spacing: 0
+    &:hover,
+    &:active,
+    &:focus
+      color: $primary !important
+      background: transparent !important
+      border: 1px solid $primary !important
+      +transition
+    @media (max-width: $break-md)
+      padding: 7px
+
+  &.wpml-ls-current-language
+    a
+      color: $white
+      background: $primary
+      border: 1px solid $primary
 
 .navbar-primary
   +box-shadow(1px 2px 4px 0px rgba(0, 0, 0, 0.1))
@@ -170,14 +200,11 @@ nav.navbar.bootsnav.navbar-primary ul.nav > li > a
     .fields-title
       color: $secondary
       text-transform: uppercase
-    .fields-text
-      color: $grey
 
 .section-fields-standard
   .title
     letter-spacing: 0
   .subtitle
-    font-size: 24px
     letter-spacing: 0
   .fields-item
     text-align: center
@@ -193,8 +220,6 @@ nav.navbar.bootsnav.navbar-primary ul.nav > li > a
     .fields-title
       color: $secondary
       text-transform: uppercase
-    .fields-text
-      color: $grey
 
 .section-fields-extended
   .title
@@ -230,12 +255,12 @@ nav.navbar.bootsnav.navbar-primary ul.nav > li > a
       padding: 40px 0 0
       .gfield
         display: inline-block
-        width: 48%
+        width: 50%
         padding: 0 15px 0 0
         &:nth-child(odd)
-          float: right
+          //float: right
         &:nth-child(even)
-          float: left
+          //float: left
         @media (max-width: $break-sm)
           width: 100%
           padding: 0
@@ -256,6 +281,7 @@ nav.navbar.bootsnav.navbar-primary ul.nav > li > a
         input
           background: #f2f3f9
           border: 1px solid #f2f3f9
+          width: 100%
         textarea
           background: #f2f3f9
           border: 1px solid #f2f3f9
@@ -481,19 +507,38 @@ nav.navbar.bootsnav.navbar-primary ul.nav > li > a
     font-weight: $regular
     text-transform: uppercase
 
+body
+  &.home
+    .footer
+      border-top: $white 1px solid
+  &:not(.home)
+    .footer
+      border-top: $blue 1px solid
 .footer
   background: $blue
+  @media (max-width: $break-md)
+    min-height: 65px
+  .row
+    position: relative
   .footer-logo
-    width: 250px
-    max-height: 320px
-    max-width: 250px
+    position: absolute
+    left: 50%
+    bottom: 0
+  .footer-logo
     @media (min-width: $break-md)
-      position: relative
-      left: -45px
-    @media (min-width: $break-sm) and (max-width: $break-md)
-      width: 200px
-      max-height: 320px
-      max-width: 200px
+      margin-left: -304 / 2 * 1px
+    @media (max-width: $break-md)
+      margin-left: -200 / 2 * 1px
+    a
+      +flex
+      flex-flow: column wrap
+    .footer-logo-img
+      margin: 0 auto
+      @media (min-width: $break-md)
+        position: relative
+      @media (min-width: $break-sm) and (max-width: $break-md)
+        width: 200px
+        max-width: 200px
   .footer-navigation
     list-style: none
     margin: 0
@@ -501,8 +546,14 @@ nav.navbar.bootsnav.navbar-primary ul.nav > li > a
     li
       display: inline-block
       text-transform: uppercase
-      padding: 10px 15px
+      padding: 25px 15px
       font-size: 14px
+      line-height: 1
+      font-weight: 500
+      @media (max-width: $break-md)
+        padding: 15px 10px
+      @media (min-width: $break-md)
+        padding: 25px 15px
       @media (max-width: $break-xs)
         display: block
       a

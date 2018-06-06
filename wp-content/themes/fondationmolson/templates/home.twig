@@ -8,8 +8,8 @@
     <!-- About Section -->
     <section class="no-padding section-about">
         <div class="container-fluid">
-            <div class="row equalize sm-equalize-auto">
-                <div class="col-sm-6 col-xs-12 bg-primary-blue" style="background-image:url({{TimberImage(page.get_field('about_section_background_left'))}});background-position: center right; background-repeat: no-repeat;">
+            <div class="row">
+                <div class="col-sm-6 col-xs-12 bg-primary-blue sm-text-center" style="background-image:url({{TimberImage(page.get_field('about_section_background_left'))}});background-position: center right; background-repeat: no-repeat;">
                     <div class="inner-column ml-sm-auto ">
                         <h2 class="title margin-20px-bottom  font-weight-500">{{ page.about_section_title }}</h2>
                         {{ page.get_field('about_section_text') }}
@@ -45,7 +45,7 @@
                 {% endfor %}
             </div>
             <div class="row">
-                <div class="col-sm-12 text-center">
+                <div class="col-xs-12 text-center">
                     <a href="{{ page.fields_of_intervention_section_cta_link }}" class="btn btn-primary btn-large">{{ page.fields_of_intervention_section_cta_title }}</a>
                 </div>
             </div>
@@ -87,8 +87,8 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-sm-12 text-center">
-                                    <a href="{{ page.news_section_cta_link }}" class="btn btn-primary btn-large">{{ page.news_section_title }}</a>
+                                <div class="col-xs-12 text-center">
+                                    <a href="{{ page.news_section_cta_link }}" class="btn btn-primary btn-large">{{ page.news_section_cta_title }}</a>
                                 </div>
                             </div>
                         </div>

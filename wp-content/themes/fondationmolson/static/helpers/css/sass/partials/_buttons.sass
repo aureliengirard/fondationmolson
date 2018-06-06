@@ -2,8 +2,13 @@
   border: 1px solid transparent
   font-family: $primary-font
   font-weight: $bold
+  @media (max-width: $break-sm)
+    min-width: 210px
   + .btn
-    margin-left: 10px
+    @media (min-width: $break-sm)
+      margin-left: 10px
+    @media (max-width: $break-sm)
+      margin-top: 10px
 
 .btn-primary
   color: $white

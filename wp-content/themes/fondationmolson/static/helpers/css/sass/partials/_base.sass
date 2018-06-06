@@ -19,15 +19,27 @@ h1, h2, h3, h4, h5, h6
   font-weight: $light
   line-height: 1.2
 
-h1
-  font-size: 36 / $font-size * 1em
-h2
-  font-size: 36 / $font-size * 1em
-h3
-  font-size: 26 / $font-size * 1em
-h4
-  font-size: 20 / $font-size * 1em
-  font-weight: $semi
+@media screen and (min-width: $break-sm)
+  h1
+    font-size: 36 / $font-size * 1em
+  h2
+    font-size: 36 / $font-size * 1em
+  h3
+    font-size: 26 / $font-size * 1em
+  h4
+    font-size: 20 / $font-size * 1em
+    font-weight: $semi
+
+@media screen and (max-width: $break-sm)
+  h1
+    font-size: 32 / $font-size * 1em
+  h2
+    font-size: 32 / $font-size * 1em
+  h3
+    font-size: 23.5 / $font-size * 1em
+  h4
+    font-size: 18 / $font-size * 1em
+    font-weight: $semi
 h5,h6
   font-size: 1em
 
