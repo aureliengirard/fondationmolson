@@ -2324,7 +2324,7 @@ header nav .navbar-nav.text-normal > li > a {font-weight: 600; font-size: 12px }
 .navbar-nav > li { position: inherit;}
 .navbar-nav > li.dropdown > .fa { display: none}
 .navbar-nav > li ul { margin: 0; padding: 0;}
-.navbar-toggle {border-radius: 0; margin-right: 0;}
+.navbar-toggle {border-radius: 0; margin-right: 0; padding: 3px 10px;}
 .mobile-toggle {display: block}
 .sidebar-nav .mobile-toggle {display: none}
 .mobile-toggle span { display: block; width: 16px; height: 2px; background: #232323; content: ""; margin: 3px 0px }

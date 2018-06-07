@@ -11,7 +11,7 @@
             <div class="row">
                 <div class="col-sm-6 col-xs-12 bg-primary-blue sm-text-center" style="background-image:url({{TimberImage(page.get_field('about_section_background_left'))}});background-position: center right; background-repeat: no-repeat;">
                     <div class="inner-column ml-sm-auto ">
-                        <h2 class="title margin-20px-bottom  font-weight-500">{{ page.about_section_title }}</h2>
+                        <h2 class="title margin-40px-bottom font-weight-500">{{ page.about_section_title }}</h2>
                         {{ page.get_field('about_section_text') }}
                         <a href="{{ page.about_section_cta_link }}" class="btn btn-primary btn-large margin-20px-top">{{ page.about_section_cta_title }}</a>
                     </div>
@@ -26,16 +26,16 @@
     </section>
 
     <!-- Fields of Intervention -->
-    <section class="section-fields padding-80px-tb">
+    <section class="section-fields padding-80px-tb md-padding-60px-tb sm-padding-40px-tb">
         <div class="container">
             <div class="row">
-                <div class="col-sm-12 center-col margin-60px-bottom text-center">
+                <div class="col-sm-12 center-col margin-60px-bottom sm-margin-40px-bottom text-center">
                     <h2 class="text-secondary font-weight-500 title">{{ page.fields_of_intervention_section_title }}</h2>
                 </div>
             </div>
             <div class="row space-between">
                 {% for item in page.get_field('fields_of_intervention') %}
-                <div class="col-sm-3 fields-item">
+                <div class="col-sm-3 col-xs-12 fields-item">
                     <div class="fields-img-wrapper" style="background-image:url({{ TimberImage(item.image).src("medium") }});"></div>
                     <div class="fields-body">
                         <h4 class="fields-title">{{ item.title }}</h4>
@@ -58,9 +58,9 @@
             <div class="row">
                 <div class="col-sm-12 col-xs-12 no-padding">
                     <div class="display-table width-100 height-100" style="background-image:url({{TimberImage(page.get_field('news_section_background_image'))}}); background-size: cover !important; background-position: center !important; background-repeat: no-repeat !important">
-                        <div class="display-table-cell vertical-align-middle padding-80px-tb width-100 bg-primary-opacity">
+                        <div class="display-table-cell vertical-align-middle padding-80px-tb md-padding-60px-tb sm-padding-40px-tb width-100 bg-primary-opacity">
                             <div class="row">
-                                <div class="col-sm-12 center-col margin-60px-bottom text-center">
+                                <div class="col-sm-12 center-col margin-60px-bottom sm-margin-40px-bottom text-center">
                                     <h2 class="text-secondary font-weight-500 title">{{ page.news_section_title }}</h2>
                                 </div>
                             </div>
