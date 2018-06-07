@@ -2,8 +2,8 @@
     <div class="container">
         <div class="row xs-equalize-auto hidden-sm hidden-xs">
             <div class="col-md-5 col-sm-5 col-xs-12 text-center display-table mr-auto xs-margin-15px-bottom">
-                <div class="display-table-cell vertical-align-middle">
-                    <ul class="footer-navigation mr-md-40">
+                <div class="display-flex vertical-align-middle">
+                    <ul class="footer-navigation mr-md-auto">
                         {% for item in menu.get_items|slice(0,3) %}
                             <li class="{{ item.class }}">
                                 <a href="{{ item.link }}" class="inner-link text-white">{{ item.title }}</a>
@@ -12,14 +12,14 @@
                     </ul>
                 </div>
             </div>
-            <div class="text-center xs-margin-15px-bottom footer-logo">
+            <div class="text-center xs-margin-15px-bottom hidden-md footer-logo">
                 <a href="{{ site.url }}">
                     <img class="footer-logo-img" src="{{ theme.link }}/static/img/logo-footer.png" data-at2x="{{ theme.link }}/static/img/logo-transparent-light.png" alt="Foundation Molson" width="304" height="228">
                 </a>
             </div>
             <div class="col-md-5 col-sm-5 col-xs-12 text-center display-table ml-auto">
-                <div class="display-table-cell vertical-align-middle">
-                    <ul class="footer-navigation ml-md-40">
+                <div class="display-flex vertical-align-middle">
+                    <ul class="footer-navigation ml-md-auto mr-auto">
                         {% for item in menu.get_items|slice(3,6) %}
                             <li class="{{ item.class }}">
                                 <a href="{{ item.link }}" class="inner-link text-white">{{ item.title }}</a>

@@ -148,3 +148,27 @@ a
 .space-between
     -webkit-justify-content: space-between
     justify-content: space-between
+
+.display-flex
+    +flex
+
+.ml-auto
+  margin-left: auto !important
+.mr-auto
+  margin-right: auto !important
+
+@media (min-width: $break-sm)
+  .ml-sm-auto
+    margin-left: auto !important
+  .mr-sm-auto
+    margin-right: auto !important
+
+@media (min-width: $break-md)
+  .mr-md-40
+    margin-right: 40px
+  .ml-md-40
+    margin-left: 40px
+  .ml-md-auto
+    margin-left: auto !important
+  .mr-md-auto
+    margin-right: auto !important
