@@ -12,7 +12,7 @@
                     <div class="row">
                         <div class="col-sm-12 center-col margin-80px-bottom sm-margin-40px-bottom text-center last-paragraph-no-margin">
                             <h2 class="text-secondary font-weight-400 title margin-40px-bottom">{{ section.section_title }}</h2>
-                            <p class="text-grey text-large description">{{ section.section_description }}</p>
+                            <p class="text-grey p-size-2 description">{{ section.section_description }}</p>
                         </div>
                     </div>
                     <div class="row">
@@ -26,7 +26,7 @@
                                 <div class="col-sm-4 col-xs-12 fields-item last-paragraph-no-margin">
                                     <div class="fields-img-wrapper" style="background-image:url({{ TimberImage(area.area_image).src("medium") }});"></div>
                                     <div class="fields-body">
-                                      <h4 class="fields-title">{{ area.area_title }}</h4>
+                                      <h3 class="fields-title">{{ area.area_title }}</h3>
                                         <p class="fields-text">{{ area.area_description }}</p>
                                     </div>
                                 </div>
@@ -56,12 +56,12 @@
                         <div class="row">
                             <div class="col-sm-12 center-col margin-80px-bottom sm-margin-40px-bottom text-center last-paragraph-no-margin">
                                 <h2 class="text-secondary font-weight-400 title margin-40px-bottom">{{ section.section_title }}</h2>
-                                <p class="text-grey text-large description">{{ section.section_description }}</p>
+                                <p class="text-grey p-size-2 description">{{ section.section_description }}</p>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-sm-12 center-col margin-60px-bottom sm-margin-30px-bottom text-center">
-                                <h4 class="text-secondary font-weight-400 subtitle">{{ section.areas_of_intervention_title }}</h4>
+                                <h3 class="text-secondary font-weight-400 subtitle">{{ section.areas_of_intervention_title }}</h3>
                             </div>
                         </div>
                         <div class="row">
@@ -70,7 +70,7 @@
                                     <div class="col-sm-4 col-xs-12 fields-item">
                                         <div class="fields-img-wrapper" style="background-image:url({{ TimberImage(area.area_image).src("medium") }});"></div>
                                         <div class="fields-body">
-                                            <h5 class="fields-title">{{ area.area_title }}</h5>
+                                            <h3 class="fields-title">{{ area.area_title }}</h3>
                                             <p class="fields-text">{{ area.area_description }}</p>
                                         </div>
                                     </div>
@@ -81,7 +81,7 @@
                                         {% for area in section.areas_of_intervention %}
                                             <div class="swiper-slide text-center">
                                                 <div class="image-wrapper" style="background-image:url({{ area.area_image }});"></div>
-                                                <h6 class="slider-title text-white">{{ area.area_title }}</h6>
+                                                <h4 class="slider-title text-white">{{ area.area_title }}</h4>
                                             </div>
                                         {% endfor %}
                                     </div>
