@@ -11,7 +11,7 @@ services:
         volumes:
             - data:/var/lib/mysql
     wordpress:
-        image: wordpress:4.9.1-php5.6
+        image: wordpress:4.9.6-php7.0
         volumes:
             - ./:/var/www/html
         ports:
