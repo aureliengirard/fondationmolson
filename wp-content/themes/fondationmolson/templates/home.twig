@@ -13,7 +13,7 @@
                     <div class="inner-column ml-sm-auto ">
                         <h2 class="title margin-40px-bottom font-weight-500">{{ page.about_section_title }}</h2>
                         {{ page.get_field('about_section_text') }}
-                        <a href="{{ page.about_section_cta_link }}" class="btn btn-primary btn-large margin-20px-top">{{ page.about_section_cta_title }}</a>
+                        <a href="{{ page.get_field('about_section_cta_link') }}" class="btn btn-primary btn-large margin-20px-top">{{ page.about_section_cta_title }}</a>
                     </div>
                 </div>
                 <div class="col-sm-6 col-xs-12" style="background-image:url({{TimberImage(page.get_field('about_section_background_right'))}});">
@@ -46,7 +46,7 @@
             </div>
             <div class="row">
                 <div class="col-xs-12 text-center">
-                    <a href="{{ page.fields_of_intervention_section_cta_link }}" class="btn btn-primary btn-large">{{ page.fields_of_intervention_section_cta_title }}</a>
+                    <a href="{{ page.get_field('fields_of_intervention_section_cta_link') }}" class="btn btn-primary btn-large">{{ page.fields_of_intervention_section_cta_title }}</a>
                 </div>
             </div>
         </div>
@@ -88,7 +88,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-xs-12 text-center">
-                                    <a href="{{ page.news_section_cta_link }}" class="btn btn-primary btn-large">{{ page.news_section_cta_title }}</a>
+                                    <a href="{{ page.get_field('news_section_cta_link') }}" class="btn btn-primary btn-large">{{ page.news_section_cta_title }}</a>
                                 </div>
                             </div>
                         </div>
