@@ -237,9 +237,9 @@
     "location": [
         [
             {
-                "param": "page",
+                "param": "page_template",
                 "operator": "==",
-                "value": "15"
+                "value": "fields_of_intervention.php"
             }
         ]
     ],
@@ -264,5 +264,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1528318515
+    "modified": 1528486530
 }
