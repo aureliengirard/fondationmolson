@@ -1323,7 +1323,7 @@
     .md-no-background-img {background-image: none !important}
 
     /* navigation */
-    header nav .navbar-nav > li > a { margin: 0 18px;}
+    header nav .navbar-nav > li > a { margin: 0 14px;}
 
     /* nav box width */
     header nav.nav-box-width { padding: 0;}
