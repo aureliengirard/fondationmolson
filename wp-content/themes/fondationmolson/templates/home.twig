@@ -9,18 +9,18 @@
     <section class="no-padding section-about">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-sm-6 col-xs-12 bg-primary-blue sm-text-center" style="background-image:url({{TimberImage(page.get_field('about_section_background_left'))}});background-position: center right; background-repeat: no-repeat;">
-                    <div class="inner-column ml-sm-auto ">
-                        <h2 class="title margin-40px-bottom font-weight-500">{{ page.about_section_title }}</h2>
-                        {{ page.get_field('about_section_text') }}
-                        <a href="{{ page.get_field('about_section_cta_link') }}" class="btn btn-primary btn-large margin-20px-top">{{ page.about_section_cta_title }}</a>
-                    </div>
+              <div class="col-sm-6 col-xs-12" style="background-image:url({{TimberImage(page.get_field('about_section_background_right'))}});">
+                <div class="inner-column ml-sm-auto">
+                  <img src="{{TimberImage(page.get_field('about_section_main_image'))}}">
                 </div>
-                <div class="col-sm-6 col-xs-12" style="background-image:url({{TimberImage(page.get_field('about_section_background_right'))}});">
-                    <div class="inner-column mr-sm-auto">
-                          <img src="{{TimberImage(page.get_field('about_section_main_image'))}}">
-                    </div>
-                </div>
+              </div>
+              <div class="col-sm-6 col-xs-12 bg-primary-blue sm-text-center" style="background-image:url({{TimberImage(page.get_field('about_section_background_left'))}});background-position: center right; background-repeat: no-repeat;">
+                  <div class="inner-column mr-sm-auto ">
+                      <h2 class="title margin-40px-bottom font-weight-500">{{ page.about_section_title }}</h2>
+                      {{ page.get_field('about_section_text') }}
+                      <a href="{{ page.get_field('about_section_cta_link') }}" class="btn btn-primary btn-large margin-20px-top">{{ page.about_section_cta_title }}</a>
+                  </div>
+              </div>
             </div>
         </div>
     </section>

@@ -1,26 +1,36 @@
 {% if 'home' in body_class %}
     <header class="no-padding margin-100px-top xs-margin-35px-top xs-background-image-center section-hero" style="background-image:url({{TimberImage(page.get_field('intro_background_image'))}}); background-size: cover !important; background-position: center !important; background-repeat: no-repeat !important">
-        <div class="container-fluid position-relative">
-            <div class="row">
-                <div class="col-sm-6 hidden-xs"></div>
-                <div class="col-sm-6 col-xs-12 text-left bg-primary-opacity sm-text-center">
-                    <div class="inner-column">
-                        <h2 class="intro-title">{{ page.get_field('intro_title') }}</h2>
-                        <div class="separator-line-horrizontal-full width-40 margin-35px-tb sm-width-100 sm-margin-40px-top sm-margin-35px-top bg-white display-inline-block sm-display-block"></div>
-                        <span class="communities-text sm-display-block sm-margin-25px-bottom">{{ page.get_field('communities') }}</span>
-                        <p class="intro-text margin-40px-bottom">{{ page.get_field('intro_text') }}</p>
-                        {% if page.get_field('ctas') %}
-                            {% for item in page.get_field('ctas') %}
-                                <a href="{{ item.link }}" class="btn btn-large {% if(item.title == 'Apply') %} btn-white-bordered {% else %} btn-primary {% endif %}">{{ item.title }}</a>
-                            {% endfor %}
-                        {% endif %}
-                    </div>
-                </div>
+      {% if site.language == 'en-CA' %}
+        <!-- Photo credit - @jfsavaria -->
+      {% elseif site.language == 'fr-CA' %}
+        <!-- Crédit photo - @jfsavaria -->
+      {% endif %}
+      <div class="container-fluid position-relative">
+        <div class="row">
+          <div class="col-sm-6 col-xs-12 text-left bg-primary-opacity sm-text-center">
+            <div class="inner-column ml-sm-auto">
+              <h2 class="intro-title">{{ page.get_field('intro_title') }}</h2>
+              <div class="separator-line-horrizontal-full width-40 margin-35px-tb sm-width-100 sm-margin-40px-top sm-margin-35px-top bg-white display-inline-block sm-display-block"></div>
+              <span class="communities-text sm-display-block sm-margin-25px-bottom">{{ page.get_field('communities') }}</span>
+              <p class="intro-text margin-40px-bottom">{{ page.get_field('intro_text') }}</p>
+              {% if page.get_field('ctas') %}
+              {% for item in page.get_field('ctas') %}
+              <a href="{{ item.link }}" class="btn btn-large {% if(item.title == 'Apply') %} btn-white-bordered {% else %} btn-primary {% endif %}">{{ item.title }}</a>
+              {% endfor %}
+              {% endif %}
             </div>
+          </div>
+          <div class="col-sm-6 hidden-xs"></div>
         </div>
+      </div>
     </header>
 {% else %}
     <header class="no-padding section-standard-hero margin-100px-top xs-margin-35px-top" style="background-image:url({{TimberImage(page.get_field('intro_background_image'))}}); background-size: cover !important; background-position: center !important; background-repeat: no-repeat !important">
+      {% if site.language == 'en-CA' %}
+        <!-- Photo credit - @jfsavaria -->
+      {% elseif site.language == 'fr-CA' %}
+        <!-- Crédit photo - @jfsavaria -->
+      {% endif %}
         <div class=" bg-primary-opacity">
             <div class="container">
                 <div class="row equalize xs-equalize-auto">
