@@ -5,6 +5,10 @@
 # Ignore everything #
 **
 
+# Keep data folder EMPTY
+!data/
+data/**
+
 # Keep basic folders EMPTY
 !wp-content/
 wp-content/**
@@ -20,6 +24,9 @@ wp-content/plugins/**
 
 # Start editing!
 
+# Sample Config
+!wp-config-sample.php
+
 # Theme
 !wp-content/themes/fondationmolson/
 !wp-content/themes/fondationmolson/**
@@ -28,38 +35,7 @@ wp-content/plugins/**
 !wp-content/plugins/timber-library/
 !wp-content/plugins/timber-library/**
 
-# All-in-one WP Migration
-!wp-content/plugins/all-in-one-wp-migration/
-!wp-content/plugins/all-in-one-wp-migration/**
-
-# ACF
-!wp-content/plugins/advanced-custom-fields-pro/
-!wp-content/plugins/advanced-custom-fields-pro/**
-!wp-content/plugins/acf-gravityforms-add-on/
-!wp-content/plugins/acf-gravityforms-add-on/**
-
-# WPML
-!wp-content/plugins/gravityforms-multilingual/
-!wp-content/plugins/gravityforms-multilingual/**
-!wp-content/plugins/sitepress-multilingual-cms/
-!wp-content/plugins/sitepress-multilingual-cms/**
-!wp-content/plugins/wpml-string-translation/
-!wp-content/plugins/wpml-string-translation/**
-!wp-content/plugins/wpml-translation-management/
-!wp-content/plugins/wpml-translation-management/**
-
-# Gravity Forms
-!wp-content/plugins/gravityforms/
-!wp-content/plugins/gravityforms/**
-
-# WP Rocket
-!wp-content/plugins/wp-rocket/
-!wp-content/plugins/wp-rocket/**
-
-# Custom Plugin
-
 # Other dependencies
-!package.json
 !.eslintrc
 
 # Stop editing!
@@ -80,6 +56,25 @@ Thumbs.db
 # Keep .gitignore #
 ###################################
 !.gitignore
+!.gitkeep
+
+# Keep .editorconfig #
+###################################
+!.editorconfig
 
 # Docker Sample Config
+###################################
 !docker-compose.yml.sample
+
+# Circleci
+###################################
+!.circleci/
+!.circleci/**
+
+# GitHub
+###################################
+!.github/
+!.github/**
+
+# Ignore node_modules
+node_modules/

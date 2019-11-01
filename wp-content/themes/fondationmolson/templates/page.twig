@@ -7,7 +7,7 @@
 {% block content %}
     {% for section in page.get_field('sections') %}
         {% if section.section_type == "standard" %}
-            <section class="section-grant-standard padding-80px-tb md-padding-60px-tb sm-padding-40px-tb" style="background-image:url({{TimberImage(section.section_background_image)}}); background-size: cover !important; background-position: center !important; background-repeat: no-repeat !important">
+            <section id="{{ section.section_id }}" class="section-grant-standard padding-80px-tb md-padding-60px-tb sm-padding-40px-tb" style="background-image:url({{TimberImage(section.section_background_image)}}); background-size: cover !important; background-position: center !important; background-repeat: no-repeat !important">
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-12 center-col no-margin last-paragraph-no-margin">
@@ -18,7 +18,7 @@
                 </div>
             </section>
         {% else %}
-            <section class="no-padding section-grant-extended" style="background-image:url({{TimberImage(section.section_background_image)}}); background-size: cover !important; background-position: center !important; background-repeat: no-repeat !important">
+            <section id="{{ section.section_id }}" class="no-padding section-grant-extended" style="background-image:url({{TimberImage(section.section_background_image)}}); background-size: cover !important; background-position: center !important; background-repeat: no-repeat !important">
                 <div class="bg-primary-opacity">
                     <div class="container padding-80px-tb md-padding-60px-tb sm-padding-40px-tb">
                         <div class="row">

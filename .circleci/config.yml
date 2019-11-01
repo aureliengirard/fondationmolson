@@ -1,0 +1,37 @@
+version: 2
+jobs:
+  deploy_staging:
+    machine:
+        enabled: true
+    environment:
+      REPOS: "staging/fondmolson.git"
+    steps:
+      - checkout
+      - run:
+          name: Deploy Staging to WP Engine
+          command: |
+            git push git@git.wpengine.com:$REPOS
+  deploy_prod:
+    machine:
+        enabled: true
+    environment:
+      REPOS: "production/fondmolson.git"
+    steps:
+      - checkout
+      - run:
+          name: Deploy Prod to WP Engine
+          command: |
+            git push git@git.wpengine.com:$REPOS
+
+workflows:
+  version: 2
+  deploy:
+    jobs:
+      - deploy_staging:
+          filters:
+            branches:
+              only: staging
+      - deploy_prod:
+          filters:
+            branches:
+              only: master

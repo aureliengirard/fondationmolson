@@ -22,6 +22,25 @@
             "button_label": "Add Section",
             "sub_fields": [
                 {
+                    "key": "field_5dbc74b6b3e48",
+                    "label": "Section ID (Optional)",
+                    "name": "section_id",
+                    "type": "text",
+                    "instructions": "can be used to target internal links",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
                     "key": "field_5ac52c9356df7",
                     "label": "Section Title",
                     "name": "section_title",
@@ -135,5 +154,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1528486470
+    "modified": 1572631820
 }
