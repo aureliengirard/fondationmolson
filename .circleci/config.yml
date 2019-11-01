@@ -34,4 +34,4 @@ workflows:
       - deploy_prod:
           filters:
             branches:
-              only: master
+              only: prod
