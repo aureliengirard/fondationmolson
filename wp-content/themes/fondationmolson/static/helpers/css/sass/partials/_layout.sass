@@ -4,27 +4,27 @@
             display: inherit
             min-height: 43.5vw
             .inner-column
-              @media (min-width: $break-xs)
-                margin-top: auto
-                margin-bottom: auto
-                padding: 40px 15px
-                max-width: ( $container * (6 / 12) )
-              @media (max-width: $break-sm)
-                padding-top: 80px
-                padding-bottom: 80px
-                margin: auto
+                @media (min-width: $break-xs)
+                    margin-top: auto
+                    margin-bottom: auto
+                    padding: 40px 15px
+                    max-width: ( $container * (6 / 12) )
+                @media (max-width: $break-sm)
+                    padding-top: 80px
+                    padding-bottom: 80px
+                    margin: auto
         &>:first-child
             .inner-column
-              @media (min-width: $break-xs)
-                padding-right: 10%
+                @media (min-width: $break-xs)
+                    padding-right: 10%
         &>:nth-last-child(1)
             .inner-column
-              @media (min-width: $break-xs)
-                padding-left: 10%
+                @media (min-width: $break-xs)
+                    padding-left: 10%
 
 main
-  section
+    section
     &.padding-80px-tb:nth-last-child(1),
     &:nth-last-child(1) .padding-80px-tb
-      @media (min-width: $break-sm)
-        padding-bottom: 180px !important
+        @media (min-width: $break-sm)
+            padding-bottom: 180px !important
