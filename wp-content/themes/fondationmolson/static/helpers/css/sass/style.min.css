@@ -271,6 +271,9 @@ body::-webkit-scrollbar-thumb {
   @media (max-width: 991px) {
     .btn {
       min-width: 210px; } }
+  @media (max-width: 767px) {
+    .btn {
+      min-width: 75%; } }
   @media (min-width: 991px) {
     .btn + .btn {
       margin-left: 10px; } }
