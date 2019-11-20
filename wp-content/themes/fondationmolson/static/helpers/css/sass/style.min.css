@@ -526,13 +526,13 @@ header nav.navbar.navbar-primary .navbar-nav li.wpml-ls-item {
   font-weight: 700;
   font-size: 36px;
   line-height: 36px;
-  color: #ffffff;
-  margin: 0 0 30px; }
+  margin: 0;
+  color: #ffffff; }
 .section-standard-hero .intro-text {
   font-family: "Roboto", sans-serif;
   color: #ffffff;
   font-weight: 400;
-  margin: 0; }
+  margin: 30px 0 0; }
 .section-standard-hero .img-main {
   width: 65%; }
 
