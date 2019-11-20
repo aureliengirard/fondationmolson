@@ -393,6 +393,7 @@ header nav.navbar.navbar-primary .navbar-nav li.wpml-ls-item
           h4
             color: $secondary
             text-align: center
+            margin: 0
           @media (max-width: $break-sm)
             height: 200px
             width: 200px
@@ -431,11 +432,16 @@ header nav.navbar.navbar-primary .navbar-nav li.wpml-ls-item
       width: 200px
       margin: 0
       border-radius: 50%
-      background-size: cover !important
-      background-position: center !important
-      background-repeat: no-repeat !important
       z-index: 1
       position: relative
+      background-color: $secondary
+      +flex
+      +justify-content(center)
+      +align-items(center)
+      h4
+        color: $white
+        text-align: center
+        margin: 0
       @media (max-width: $break-md)
         height: 150px
         width: 150px

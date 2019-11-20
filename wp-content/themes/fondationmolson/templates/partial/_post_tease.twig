@@ -1,7 +1,9 @@
 <div class="equalize sm-equalize-auto margin-80px-bottom display-inline-block xs-text-center blog-item">
     <div class="col-md-5 margin-40px-bottom padding-25-lr">
         <a href="{{ post.link }}">
-            <div class="blog-img-wrapper" style="background-image:url({{ post.thumbnail.src("medium") }});"></div>
+            <div class="blog-img-wrapper">
+                <h4>{{ post.category }}</h4>
+            </div>
         </a>
     </div>
     <div class="col-md-7 padding-25-lr">
