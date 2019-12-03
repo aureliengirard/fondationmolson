@@ -200,9 +200,9 @@ a {
     text-decoration: none;
     outline: none; }
 
-.bg-primary-opacity a {
+.bg-primary-opacity a:not(.btn) {
   color: #ffffff; }
-  .bg-primary-opacity a:hover, .bg-primary-opacity a:active, .bg-primary-opacity a:focus {
+  .bg-primary-opacity a:not(.btn):hover, .bg-primary-opacity a:not(.btn):active, .bg-primary-opacity a:not(.btn):focus {
     color: #e6e6e6;
     text-decoration: none;
     outline: none; }
@@ -287,19 +287,20 @@ body::-webkit-scrollbar-thumb {
   border-color: #353da0;
   background: #353da0; }
   .btn-primary:hover, .btn-primary:focus, .btn-primary:active:focus, .btn-primary:active {
-    background: #3b44b3;
-    border-color: #3b44b3;
-    color: #ffffff;
+    background: #ffffff;
+    border-color: #353da0;
+    color: #353da0;
     outline: none; }
 
 .btn-primary-bordered {
-  background: #353da0;
+  background: none;
   border: 1px solid;
-  border-color: #353da0;
+  border-color: #ffffff;
   color: #ffffff; }
   .btn-primary-bordered:hover, .btn-primary-bordered:focus, .btn-primary-bordered:active:focus, .btn-primary-bordered:active {
-    background: transparent;
-    color: #353da0;
+    border-color: #353da0;
+    background: #353da0;
+    color: #ffffff;
     outline: none; }
 
 .btn-secondary {
