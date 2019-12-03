@@ -15,7 +15,7 @@
               <p class="intro-text margin-40px-bottom">{{ page.get_field('intro_text') }}</p>
               {% if page.get_field('ctas') %}
               {% for item in page.get_field('ctas') %}
-              <a href="{{ item.link }}" class="btn btn-large {% if(item.title == 'Apply') %} btn-white-bordered {% else %} btn-primary {% endif %}">{{ item.title }}</a>
+              <a href="{{ item.link }}" class="btn btn-large {% if loop.length > '1' and loop.first  == 'true' %} btn-primary-bordered {% else %} btn-primary {% endif %}">{{ item.title }}</a>
               {% endfor %}
               {% endif %}
             </div>
