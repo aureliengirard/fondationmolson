@@ -33,7 +33,7 @@
                     <h2 class="text-secondary font-weight-500 title">{{ page.fields_of_intervention_section_title }}</h2>
                 </div>
             </div>
-            <div class="row space-between">
+            <div class="row space-around">
                 {% for item in page.get_field('fields_of_intervention') %}
                 <div class="col-sm-3 col-xs-12 fields-item">
                     <div class="fields-img-wrapper" style="background-image:url({{ TimberImage(item.image).src("medium") }});"></div>

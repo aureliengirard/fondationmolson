@@ -141,6 +141,10 @@ a.text-grey {
   -webkit-justify-content: space-between;
   justify-content: space-between; }
 
+.space-around {
+  -webkit-justify-content: space-around;
+  justify-content: space-around; }
+
 .display-flex {
   display: -webkit-flex;
   display: flex; }
@@ -593,8 +597,7 @@ header nav.navbar.navbar-primary .navbar-nav li.wpml-ls-item {
 .section-grant-standard .text {
   color: #2e3b62; }
   .section-grant-standard .text ul {
-    padding: 10px 25px;
-    margin-top: 20px; }
+    padding: 10px 25px; }
   .section-grant-standard .text ul > li {
     position: relative;
     padding: 2px 0 10px 0;
@@ -693,8 +696,7 @@ header nav.navbar.navbar-primary .navbar-nav li.wpml-ls-item {
 .section-grant-extended .text {
   color: #ffffff; }
   .section-grant-extended .text ul {
-    padding: 10px 25px;
-    margin-top: 20px; }
+    padding: 10px 25px; }
   .section-grant-extended .text ul > li {
     position: relative;
     padding: 2px 0 10px 0;
