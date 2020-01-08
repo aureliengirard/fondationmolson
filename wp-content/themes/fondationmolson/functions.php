@@ -65,6 +65,7 @@ class StarterSite extends TimberSite {
 	}
 
 	function add_to_context( $context ) {
+		$context['options'] = get_fields('option');
 		$context['menu'] = new TimberMenu();
 		$context['site'] = $this;
 		return $context;
