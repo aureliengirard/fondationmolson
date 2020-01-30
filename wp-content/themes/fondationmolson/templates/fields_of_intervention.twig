@@ -24,7 +24,7 @@
                         {% if section.display_type == "columns"%}
                             {% for area in section.areas_of_intervention %}
                                 <div class="col-sm-4 col-xs-12 fields-item last-paragraph-no-margin">
-                                    <div class="fields-img-wrapper" style="background-image:url({{ TimberImage(area.area_image).src("medium") }});"></div>
+                                    <div class="fields-img-wrapper" style="background-image:url({{ TimberImage(area.area_image).src|resize(200, 200) }});"></div>
                                     <div class="fields-body">
                                         <h4 class="fields-title">{{ area.area_title }}</h4>
                                         <p class="fields-text">{{ area.area_description }}</p>
@@ -36,7 +36,7 @@
                                 <div class="swiper-wrapper">
                                     {% for area in section.areas_of_intervention %}
                                         <div class="swiper-slide text-center">
-                                            <div class="image-wrapper" style="background-image:url({{ area.area_image }});"></div>
+                                            <div class="image-wrapper" style="background-image:url({{ area.area_image|resize(200, 200) }});"></div>
                                             <h4 class="slider-title text-secondary">{{ area.area_title }}</h4>
                                         </div>
                                     {% endfor %}
@@ -65,7 +65,7 @@
                             {% if section.display_type == "columns"%}
                                 {% for area in section.areas_of_intervention %}
                                     <div class="col-sm-4 col-xs-12 fields-item">
-                                        <div class="fields-img-wrapper" style="background-image:url({{ TimberImage(area.area_image).src("medium") }});"></div>
+                                        <div class="fields-img-wrapper" style="background-image:url({{ TimberImage(area.area_image).src|resize(200, 200) }});"></div>
                                         <div class="fields-body">
                                             <h4 class="fields-title">{{ area.area_title }}</h4>
                                             <p class="fields-text">{{ area.area_description }}</p>
