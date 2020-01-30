@@ -36,7 +36,7 @@
                                 <div class="swiper-wrapper">
                                     {% for area in section.areas_of_intervention %}
                                         <div class="swiper-slide text-center">
-                                            <div class="image-wrapper" style="background-image:url({{ area.area_image|resize(200, 200) }});"></div>
+                                            <div class="image-wrapper" style="background-image:url({{ TimberImage(area.area_image).src|resize(200, 200) }});"></div>
                                             <h4 class="slider-title text-secondary">{{ area.area_title }}</h4>
                                         </div>
                                     {% endfor %}
