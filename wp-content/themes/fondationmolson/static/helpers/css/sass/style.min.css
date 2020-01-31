@@ -847,6 +847,8 @@ header nav.navbar.navbar-primary .navbar-nav li.wpml-ls-item {
   margin: 0 0 15px; }
   .section-single-post .single-post-meta .spacer {
     margin: 0 5px; }
+  .section-single-post .single-post-meta .single-post-date {
+    text-transform: capitalize; }
 .section-single-post .single-post-title {
   font-size: 24px;
   font-weight: 400;
