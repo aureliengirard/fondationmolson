@@ -399,7 +399,7 @@ textarea.input-bg {background-color: #f7f7f7; border-radius: 4px; border: 1px so
 .btn.btn-very-small {font-size:9px; padding: 1px 17px; line-height: 22px;}
 .btn.btn-small {font-size:11px; padding: 4px 24px;}
 .btn.btn-medium {font-size:12px; padding: 6px 25px 5px;}
-.btn.btn-large {font-size:13px; padding: 9px 28px; line-height: 2}
+.btn.btn-large {font-size:13px; padding: 9px 20px; line-height: 2}
 .btn.btn-extra-large {font-size:15px; padding: 12px 40px 13px;  line-height: 25px}
 .btn-dual .btn {margin: 0 10px; }
 .btn i {margin-left: 6px; vertical-align: middle; position: relative; top:-1px}

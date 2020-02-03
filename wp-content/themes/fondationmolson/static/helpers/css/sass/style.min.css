@@ -257,6 +257,12 @@ p {
     p .p-size-2, p .p-size-2 p {
       font-size: 1.125em; } }
 
+ol ol {
+  list-style: lower-latin; }
+
+ol ol ol {
+  list-style: lower-roman; }
+
 body::-webkit-scrollbar {
   width: 0.6em; }
 
@@ -879,7 +885,8 @@ header nav.navbar.navbar-primary .navbar-nav li.wpml-ls-item {
   font-size: 18px;
   line-height: 28px;
   font-weight: 400;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  padding: 0 25px; }
 
 body.home .footer {
   border-top: #ffffff 1px solid; }
