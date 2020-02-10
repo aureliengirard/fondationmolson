@@ -931,13 +931,12 @@ body:not(.home) .footer {
       display: inline-block;
       text-transform: uppercase;
       padding: 25px 12px;
-      font-size: 14px;
+      font-size: 13px;
       line-height: 1;
       font-weight: 500; }
       @media (max-width: 1199px) {
         .footer .footer-navigation li {
-          padding: 15px 7px;
-          font-size: 13.5px; } }
+          padding: 15px 7px; } }
       @media (min-width: 1199px) {
         .footer .footer-navigation li {
           padding: 25px 12px; } }
