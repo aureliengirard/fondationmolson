@@ -273,6 +273,11 @@ body::-webkit-scrollbar-thumb {
   background-color: #2e3b62;
   outline: 1px solid #2e3b62; }
 
+@media screen and (min-width: 1199px) {
+  footer .container {
+    width: 95%;
+    max-width: 1440px; } }
+
 .btn {
   border: 1px solid transparent;
   font-family: "Roboto", sans-serif;
