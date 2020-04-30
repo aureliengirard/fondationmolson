@@ -6,9 +6,14 @@
             {% block head %}
             {% endblock %}
         {% endblock %}
+
+		{% include 'partial/tracking.twig' with { 'location': 'head' } %}
 	</head>
 
 	<body class="{{body_class}}">
+
+	{% include 'partial/tracking.twig' with { 'location': 'body' } %}
+
         {% block navbar %}
             {% include 'partial/navbar.twig' %}
         {% endblock navbar %}
