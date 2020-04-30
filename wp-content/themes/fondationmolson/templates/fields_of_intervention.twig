@@ -10,7 +10,7 @@
             <section class="section-fields-standard padding-80px-tb md-padding-60px-tb sm-padding-40px-tb" style="background-image:url({{TimberImage(section.section_background_image)}}); background-size: cover !important; background-position: center !important; background-repeat: no-repeat !important">
                 <div class="container">
                     <div class="row">
-                        <div class="col-sm-12 center-col margin-80px-bottom sm-margin-40px-bottom text-center last-paragraph-no-margin">
+                        <div class="col-sm-12 center-col text-center last-paragraph-no-margin">
                             <h2 class="text-secondary font-weight-400 title margin-40px-bottom">{{ section.section_title }}</h2>
                             <p class="text-grey p-size-2 description">{{ section.section_description }}</p>
                         </div>
@@ -22,6 +22,17 @@
                         </div>
                     </div>
                     {% endif %}
+
+                    {% set areas = false %}
+                    {% for area in section.areas_of_intervention %}
+                        {% if loop.length > 0 %}
+                            {% set areas = true %}
+                        {% endif %}
+                    {% endfor %}
+                    {{section.areas_of_intervention.length}}
+
+
+                    {% if section.areas_of_intervention != "" %}
                     <div class="row">
                         {% if section.display_type == "columns"%}
                             {% for area in section.areas_of_intervention %}
@@ -46,6 +57,7 @@
                             </div>
                         {% endif %}
                     </div>
+                    {% endif %}
                 </div>
             </section>
         {% else %}
@@ -53,7 +65,7 @@
                 <div class="bg-primary-opacity">
                     <div class="container padding-80px-tb md-padding-60px-tb sm-padding-40px-tb">
                         <div class="row">
-                            <div class="col-sm-12 center-col margin-80px-bottom sm-margin-40px-bottom text-center last-paragraph-no-margin">
+                            <div class="col-sm-12 center-col text-center last-paragraph-no-margin">
                                 <h2 class="text-secondary font-weight-400 title margin-40px-bottom">{{ section.section_title }}</h2>
                                 <p class="text-grey p-size-2 description">{{ section.section_description }}</p>
                             </div>
@@ -65,6 +77,7 @@
                             </div>
                         </div>
                         {% endif %}
+                        {% if section.areas_of_intervention != "" %}
                         <div class="row">
                             {% if section.display_type == "columns"%}
                                 {% for area in section.areas_of_intervention %}
@@ -92,6 +105,7 @@
                                 </div>
                             {% endif %}
                         </div>
+                        {% endif %}
                     </div>
                 </div>
                 <!-- Initialize Swiper -->

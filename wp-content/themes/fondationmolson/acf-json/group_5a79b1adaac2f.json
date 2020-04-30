@@ -44,8 +44,8 @@
                     "key": "field_5ac52586adf7d",
                     "label": "Section Type",
                     "name": "section_type",
-                    "type": "text",
-                    "instructions": "",
+                    "type": "select",
+                    "instructions": "For a blue background, select \"Extended\"",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -53,17 +53,25 @@
                         "class": "",
                         "id": ""
                     },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
+                    "choices": {
+                        "standard": "Standard",
+                        "extended": "Extended"
+                    },
+                    "default_value": [
+                        "Standard"
+                    ],
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "ui": 0,
+                    "return_format": "value",
+                    "ajax": 0,
+                    "placeholder": ""
                 },
                 {
                     "key": "field_5a79b19cbe4d3",
                     "label": "Section Description",
                     "name": "section_description",
-                    "type": "textarea",
+                    "type": "wysiwyg",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -73,10 +81,10 @@
                         "id": ""
                     },
                     "default_value": "",
-                    "placeholder": "",
-                    "maxlength": "",
-                    "rows": "",
-                    "new_lines": ""
+                    "tabs": "all",
+                    "toolbar": "full",
+                    "media_upload": 1,
+                    "delay": 0
                 },
                 {
                     "key": "field_5a79b1b9be4d4",
@@ -214,7 +222,15 @@
                     "type": "image",
                     "instructions": "",
                     "required": 0,
-                    "conditional_logic": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5ac52586adf7d",
+                                "operator": "==",
+                                "value": "extended"
+                            }
+                        ]
+                    ],
                     "wrapper": {
                         "width": "",
                         "class": "",
@@ -251,7 +267,6 @@
     "hide_on_screen": [
         "the_content",
         "excerpt",
-        "custom_fields",
         "discussion",
         "comments",
         "revisions",
@@ -264,5 +279,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1528486530
+    "modified": 1588260288
 }

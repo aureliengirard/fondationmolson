@@ -578,7 +578,8 @@ header nav.navbar.navbar-primary .navbar-nav li.wpml-ls-item {
 .section-fields-standard .title {
   letter-spacing: 0; }
 .section-fields-standard .subtitle {
-  letter-spacing: 0; }
+  letter-spacing: 0;
+  margin-top: 40px; }
 .section-fields-standard .fields-item {
   text-align: center;
   margin-bottom: 60px; }
@@ -602,6 +603,9 @@ header nav.navbar.navbar-primary .navbar-nav li.wpml-ls-item {
   color: #ffffff; }
 .section-fields-extended .subtitle {
   letter-spacing: 0;
+  color: #ffffff;
+  margin-top: 40px; }
+.section-fields-extended p, .section-fields-extended ul, .section-fields-extended ol, .section-fields-extended li, .section-fields-extended a {
   color: #ffffff; }
 
 .section-grant-standard .title {
