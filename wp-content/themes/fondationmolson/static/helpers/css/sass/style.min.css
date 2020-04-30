@@ -942,7 +942,7 @@ body:not(.home) .footer {
     display: flex;
     flex-flow: column wrap; }
   .footer .footer-logo .footer-logo-img {
-    margin: 0 auto; }
+    margin: -1px auto; }
     @media (min-width: 1199px) {
       .footer .footer-logo .footer-logo-img {
         position: relative; } }
