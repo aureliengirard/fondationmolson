@@ -20,7 +20,7 @@ header nav .navbar-nav > li > a
 
 body.admin-bar .navbar-primary
   margin-top: 32px
-  
+
 .navbar-primary
   .mobile-toggle span
     display: block
@@ -182,6 +182,12 @@ header nav.navbar.navbar-primary .navbar-nav li.wpml-ls-item
     width: 65%
 
 .section-about
+  .col-sm-6
+    display: inherit
+    min-height: 43.5vw
+    background-size: cover
+    @media (max-width: $break-xs)
+      min-height: 85vw !important
   .title
     color: $white
     letter-spacing: 0

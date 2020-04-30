@@ -555,6 +555,13 @@ header nav.navbar.navbar-primary .navbar-nav li.wpml-ls-item {
 .section-standard-hero .img-main {
   width: 65%; }
 
+.section-about .col-sm-6 {
+  display: inherit;
+  min-height: 43.5vw;
+  background-size: cover; }
+  @media (max-width: 767px) {
+    .section-about .col-sm-6 {
+      min-height: 85vw !important; } }
 .section-about .title {
   color: #ffffff;
   letter-spacing: 0; }
@@ -962,7 +969,8 @@ body:not(.home) .footer {
 
 .container-fluid .row .col-sm-6 {
   display: inherit;
-  min-height: 43.5vw; }
+  min-height: 43.5vw;
+  background-size: cover; }
   @media (min-width: 767px) {
     .container-fluid .row .col-sm-6 .inner-column {
       margin-top: auto;
