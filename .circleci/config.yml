@@ -4,7 +4,7 @@ jobs:
     machine:
         enabled: true
     environment:
-      REPOS: "staging/fondmolson.git"
+      REPOS: "production/fondmolsonstg"
     steps:
       - checkout
       - run:
@@ -15,7 +15,7 @@ jobs:
     machine:
         enabled: true
     environment:
-      REPOS: "production/fondmolson.git"
+      REPOS: "production/fondmolson"
     steps:
       - checkout
       - run:
