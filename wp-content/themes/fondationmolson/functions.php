@@ -17,7 +17,7 @@ Timber::$dirname = array('templates', 'views');
 class StarterSite extends TimberSite {
 
 	function __construct() {
-		add_theme_support( 'post-formats' );
+		add_theme_support( 'post-formats', array( 'aside', 'image', 'video', 'quote', 'link')) ;
 		add_theme_support( 'post-thumbnails' );
 		add_theme_support( 'menus' );
 		add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption' ) );
@@ -39,29 +39,6 @@ class StarterSite extends TimberSite {
 	}
 
 	function register_local_scripts() {
-		// If not in admin, load newer version of jquery
-//		if (!is_admin()) {
-//			wp_deregister_script('jquery');
-//			wp_register_script('jquery', get_template_directory_uri() . '/static/js/jquery-3.2.1.min.js', array(), '3.2.1');
-//			wp_enqueue_script('jquery');
-//			wp_register_script('jquery-ui', get_template_directory_uri() . '/static/js/jquery-ui.js', ['jquery']);
-//			wp_enqueue_script('jquery-ui');
-//		}
-
-//		wp_register_script('popper', get_template_directory_uri() . '/static/js/popper.js', ['jquery']);
-//		wp_enqueue_script('popper');
-//		wp_register_script('bootstrap', get_template_directory_uri() . '/static/js/bootstrap.min.js', ['jquery']);
-//		wp_enqueue_script('bootstrap');
-//		wp_register_script('fontawesome', get_template_directory_uri() . '/static/js/fontawesome-all.min.js', ['jquery']);
-//		wp_enqueue_script('fontawesome');
-
-//		wp_enqueue_style('bootstrap-css', get_stylesheet_directory_uri() . '/static/css/bootstrap.css');
-//		wp_enqueue_style('fontawesome-css', get_stylesheet_directory_uri() . '/static/css/fa-svg-with-js.css');
-
-		// wp_enqueue_style('base-css', get_stylesheet_directory_uri() . '/static/css/base.css');
-//		wp_enqueue_style('main-css', get_stylesheet_directory_uri() . '/static/css/main.css');
-
-//		wp_enqueue_style( 'wpb-google-fonts', 'https://fonts.googleapis.com/css?family=Playfair+Display:400,700,700i|Work+Sans:400,600', false );
 	}
 
 	function add_to_context( $context ) {
@@ -80,30 +57,6 @@ class StarterSite extends TimberSite {
 }
 
 new StarterSite();
-
-
-// Force Gravity Forms to init scripts in the footer and ensure that the DOM is loaded before scripts are executed
-add_filter( 'gform_init_scripts_footer', '__return_true' );
-
-add_filter( 'gform_cdata_open', 'wrap_gform_cdata_open', 1 );
-function wrap_gform_cdata_open( $content = '' ) {
-	if ( ( defined('DOING_AJAX') && DOING_AJAX ) || isset( $_POST['gform_ajax'] ) ) {
-		return $content;
-	}
-
-	$content = 'document.addEventListener( "DOMContentLoaded", function() { ';
-	return $content;
-}
-
-add_filter( 'gform_cdata_close', 'wrap_gform_cdata_close', 99 );
-	function wrap_gform_cdata_close( $content = '' ) {
-	if ( ( defined('DOING_AJAX') && DOING_AJAX ) || isset( $_POST['gform_ajax'] ) ) {
-		return $content;
-	}
-
-	$content = ' }, false );';
-	return $content;
-}
 
 // Create ACF Options page
 if(function_exists('acf_add_options_page')) {
