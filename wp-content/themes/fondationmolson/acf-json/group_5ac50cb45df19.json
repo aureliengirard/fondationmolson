@@ -1,6 +1,6 @@
 {
     "key": "group_5ac50cb45df19",
-    "title": "Standard Page Header Fields",
+    "title": "Section | Page Header",
     "fields": [
         {
             "key": "field_5ac50cb466237",
@@ -49,7 +49,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "50",
                 "class": "",
                 "id": ""
             },
@@ -73,7 +73,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "50",
                 "class": "",
                 "id": ""
             },
@@ -120,7 +120,6 @@
     "hide_on_screen": [
         "the_content",
         "excerpt",
-        "custom_fields",
         "discussion",
         "comments",
         "revisions",
@@ -131,7 +130,8 @@
         "tags",
         "send-trackbacks"
     ],
-    "active": 1,
-    "description": "",
-    "modified": 1528486850
+    "active": true,
+    "description": "Partial > _jumbotron.twig",
+    "show_in_rest": 0,
+    "modified": 1654279909
 }

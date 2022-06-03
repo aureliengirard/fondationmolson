@@ -1,6 +1,6 @@
 <?php
 /**
-* Template Name: Fields of Intervention Page Template
+* Template Name: Partners Page Template
  *
  * @package  WordPress
  * @subpackage  Timber
@@ -11,4 +11,4 @@ $context = Timber::get_context();
 $post = new TimberPost();
 $context['page'] = $post;
 
-Timber::render('fields_of_intervention.twig', $context);
+Timber::render('partners.twig', $context);
