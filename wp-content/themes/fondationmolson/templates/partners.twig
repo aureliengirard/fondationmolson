@@ -1,13 +1,13 @@
-{% extends "base.twig" %}
+{%- extends "base.twig" -%}
 
-{% block header %}
+{%- block header %}
 {% include 'partial/_jumbotron.twig' with { page: page } %}
-{% endblock %}
+{% endblock -%}
 
-{% set grants_table = page.meta('grants_table') %}
-{% set grants_title = page.meta('grants_title') %}
-{% set grants_header = grants_table.header %}
-{% set grants_body = grants_table.body %}
+{%- set grants_table = page.meta('grants_table') %}
+{%- set grants_title = page.meta('grants_title') %}
+{%- set grants_header = grants_table.header %}
+{%- set grants_body = grants_table.body %}
 
 {% block content %}
     <section id="partners_grants" class="section-grant-standard padding-80px-tb section__partners-grants">
@@ -19,13 +19,15 @@
                 </div>
                 {% endif %}
                 <div class="col-sm-12">
-                    {% if grants_table != empty %}
+                    {%- if grants_table != empty -%}
                         <table class="text-secondary" border="0">
                             {% if grants_header != empty %}
                             <thead>
                                 <tr>
                                 {%- for th in grants_header -%}
-                                    <th>{{th.c}}</th>
+                                    {%- if th.c != empty -%}
+                                        <th>{{th.c}}</th>
+                                    {%- endif -%}
                                 {%- endfor -%}
                                 </tr>
                             </thead>
@@ -34,15 +36,17 @@
                         {%- for tr in grants_body -%}
                         <tr>
                             {%- for td in tr -%}
-                                <td>{{td.c}}</td>
+                                {%- if td.c != empty -%}
+                                    <td>{{td.c}}</td>
+                                {%- endif -%}
                             {%- endfor -%}
                         </tr>
                         {%- endfor -%}
                         </tbody>
                         </table>
-                    {% endif %}
+                    {%- endif -%}
                 </div>
             </div>
         </div>
     </section>
-{% endblock %}
+{%- endblock -%}
