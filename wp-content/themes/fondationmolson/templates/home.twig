@@ -78,7 +78,7 @@
                                             </div>
                                         </a>
                                         <div class="news-body height-450px md-height-500px sm-height-auto xs-height-auto">
-                                            <span class="news-date">{{ post.date|date("m/d/Y") }}</span>
+                                            {# <span class="news-date">{{ post.date|date("m/d/Y") }}</span> #}
                                             <a href="{{ post.link }}"><h3 class="news-title">{{ post.title|length > 50 ? post.title|slice(0, 100) ~ '...' :post.title  }}</h3></a>
                                             <p class="news-text">{{ post.preview.read_more('')|length > 50 ? post.preview.read_more('')|slice(0, 100) ~ '...' :post.preview.read_more('')  }}</p>
                                             <a href="{{ post.link }}"><span class="news-link">{{ __('Read more', 'Blog') }}</span></a>

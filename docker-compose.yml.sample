@@ -12,7 +12,7 @@ services:
       # - data:/var/lib/mysql
       - ./data/mysql:/var/lib/mysql
   wordpress:
-    image: wordpress:5.9-php8.0
+    image: wordpress:6.0-php8.1-apache
     volumes:
       - ./:/var/www/html
     ports:

@@ -22,7 +22,7 @@ class StarterSite extends TimberSite {
 		add_theme_support( 'menus' );
 		add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption' ) );
 		add_filter( 'timber_context', array( $this, 'add_to_context' ) );
-		add_filter( 'gform_enable_field_label_visibility_settings', '__return_true' );
+		//add_filter( 'gform_enable_field_label_visibility_settings', '__return_true' );
 		add_filter( 'get_twig', array( $this, 'add_to_twig' ) );
 		add_action( 'init', array( $this, 'register_post_types' ) );
 		add_action( 'init', array( $this, 'register_taxonomies' ) );
