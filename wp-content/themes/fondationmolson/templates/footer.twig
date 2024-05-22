@@ -42,3 +42,25 @@
         </div>
     </div>
 </footer>
+<div class="copyright-bar padding-10px-tb sm-padding-10px-tb">
+    <div class="container">
+        <div class="row visible-sm visible-xs">
+            <div class="col-lg-12 text-center">
+                <ul class="copyright-navigation">
+                        <li>
+                            <span class="nav-copryright text-white">&copy;{{ site.name }} {{"now"|date('Y')}}</span>
+                        </li>
+                        <li><span class="nav-divider text-white"> - </span></li>
+                    {% for item in menu_policy.get_items %}
+                        <li>
+                            <a href="{{ item.link }}" class="inner-link text-white">{{ item.title }}</a>
+                        </li>
+                        {% if loop.last == false %}
+                        <li><span class="nav-divider text-white"> - </span></li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

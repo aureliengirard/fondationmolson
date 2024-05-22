@@ -593,3 +593,30 @@ body
         &:focus
           color: $white
           text-decoration: underline
+.copyright-bar
+  background-color: #353da0
+  .copyright-navigation
+      list-style: none
+      margin: 0
+      padding: 0
+      li
+        display: inline-block
+        padding: 25px 12px
+        font-size: 13px
+        line-height: 1
+        font-weight: 500
+        color: $white
+        @media (max-width: $break-md) 
+          padding: 15px 7px
+        @media (min-width: $break-md)
+          padding: 25px 12px
+        @media (max-width: $break-xs)
+          display: block
+        a
+          &:hover,
+          &:active,
+          &:focus
+            color: inherit
+            text-decoration: underline
+      li .nav-divider
+        display: none

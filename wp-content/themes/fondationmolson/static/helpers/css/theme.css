@@ -3566,58 +3566,7 @@ footer input::-moz-placeholder { color: #6f6f6f; text-overflow: ellipsis; font-s
 footer input:-ms-input-placeholder { color: #6f6f6f; text-overflow: ellipsis; font-size: 11px; font-weight: 400; opacity:1;}
 footer .newsletter input { color: #6f6f6f; letter-spacing: normal; }
 
-/* latest post */
-.latest-post { list-style: none; padding: 0; margin: 0;}
-.latest-post li {display: table; padding:15px 0;}
-aside .latest-post li {padding:10px 0;}
-.latest-post li:first-child {padding-top: 0}
-.latest-post li:last-child {border-bottom:none}
-.latest-post li figure {height:33px; width: 60px; float: left}
-.latest-post li figure, footer .latest-post li div {display: table-cell; vertical-align: top}
-aside .latest-post li figure {width: 75px;}
-.latest-post li div {line-height: normal; padding-left: 13px; position: relative; top: -1px;}
-.latest-post li figure:hover img, .latest-post li figure:focus img {transform: none; -webkit-transform: none; -moz-transform: none; -ms-transform: none; -o-transform: none;}
 
-/* newsletter */
-.newsletter input {float: left; font-size: 12px; color: #fff; width: 100%; height: 100%; padding: 0 38px 0 12px}
-.newsletter .btn.btn-arrow-small {background: transparent none repeat scroll 0 0; margin-right: 0; height: 100%; padding-top: 0;  padding-bottom: 5px; text-align: center; right: 0; border-width: 0 0 0 1px}
-.newsletter .btn.btn-arrow-small i {color: #626262; font-size: 18px; display: block; margin-top: 6px;}
-.newsletter {width: 100%; height: 33px}
-
-.newsletter .btn.border-color-white {border-color:#fff}
-.newsletter .btn.border-color-black {border-color:#000}
-.newsletter .btn.border-color-extra-dark-gray {border-color:#232323}
-.newsletter .btn.border-color-medium-dark-gray {border-color:#363636}
-.newsletter .btn.border-color-dark-gray {border-color:#939393}
-.newsletter .btn.border-color-extra-medium-gray {border-color:#dbdbdb}
-.newsletter .btn.border-color-medium-gray {border-color:#e4e4e4}
-.newsletter .btn.border-color-extra-light-gray {border-color:#ededed}
-.newsletter .btn.border-color-light-gray {border-color:#f5f5f5}
-.newsletter .btn.border-color-light-pink {border-color:#862237}
-.newsletter .btn.border-color-deep-pink {border-color:#ff214f}
-.newsletter .btn.border-color-transparent-pink {border-color: rgba(255, 33, 79, 0.45);}
-
-
-/* instagram feed */
-.instagram-follow-api ul { list-style: none; padding: 0; margin: 0; display: flex; width: 100%; flex-wrap: wrap; text-align: center;}
-.instagram-follow-api li { padding:0 10px 10px 0; width: 33.333%; box-sizing: border-box; display: inline-block}
-.instagram-follow-api li img {width: 100%}
-.instagram-follow-api li figure {position: relative; overflow: hidden}
-.instagram-follow-api li figure a .insta-counts{position: absolute; bottom: -100%; left: 0; text-align: center; background: rgba(35,35,35,0.8); color: #fff; width: 100%; font-size: 12px;}
-.instagram-follow-api li figure:hover a .insta-counts{bottom: 0;}
-.instagram-follow-api li figure a .insta-counts i {margin-right: 5px; margin-left: 5px; vertical-align: middle;}
-.instagram-follow-api li figure span {vertical-align: middle;}
-
-/*instagram feed style 1*/
-.instafeed-style1{ margin-bottom: 30px; overflow: hidden;}
-.instafeed-style1 .insta-image {width: 100%;}
-.instafeed-style1 .insta-link {position: relative; display: block; background: #232323}
-.instafeed-style1 .insta-counts {text-align: center; position: absolute; top: 50%; transform: translateY(-30%); -webkit-transform: translateY(-30%); -moz-transform: translateY(-30%); -ms-transform: translateY(-30%); -o-transform: translateY(-30%); left: 0; width: 100%; color: #fff; opacity : 0;}
-.instafeed-style1 .insta-link:hover .insta-counts {opacity : 1; transform: translateY(-50%); -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); -ms-transform: translateY(-50%); -o-transform: translateY(-50%);}
-.instafeed-style1 .insta-link:hover .insta-image {opacity : 0.2;}
-.instafeed-style1 .insta-counts i {vertical-align: middle; font-size: 28px}
-.instafeed-style1 .insta-counts span {margin-right: 25px; position: relative}
-.instafeed-style1 .insta-counts span.count-number {position: absolute; top: -14px; font-size: 12px; left: 15px; width: 22px; height: 22px; text-align: center; background: #ff214f; line-height: 20px; border-radius: 100%;}
 
 /* ===================================
    Home page
